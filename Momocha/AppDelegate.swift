@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let cameraNavigationController = storyboard.instantiateViewController(withIdentifier: "MomoNavigationController") as! UINavigationController
         cameraNavigationController.tabBarItem.title = "Camera"
         cameraNavigationController.tabBarItem.image = #imageLiteral(resourceName: "take-photo")
-        let cameraViewController = cameraNavigationController.topViewController as! CameraScreenViewController
+        let cameraViewController = cameraNavigationController.topViewController as! MainNavigationViewController
         
         //cameraViewController.endpoint = "top_rated"
         

@@ -449,7 +449,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QP4-Q1-mMe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DZT-S5-3H9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MomoNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="DZT-S5-3H9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ibf-RR-bUo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
