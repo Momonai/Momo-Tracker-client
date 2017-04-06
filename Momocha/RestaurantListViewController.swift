@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 struct cellData {
     let cell: Int!
@@ -32,7 +33,33 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
         
         // defer computing the height of each row until the user scrolls the table
         tableView.estimatedRowHeight = 120
-
+        
+        
+        // make a call to parse to get the data
+        let restrnts : NSDictionary = [
+            "name" : "Mamako momo pasal",
+            "screenname" : "Mamako momo pasal",
+            "likecount" : 42,
+            "dislikeCount" : 12,
+            "reviewers": [1, 2],
+            "reviews": [2, 4],
+            "coordinate": CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667)
+        ]
+        
+        // make a call to parse to get all recent posts
+        let a: NSDictionary = [
+            "postinguser" : 2,
+            "restaurantmentioned" : 3,
+            "location" : CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667),
+            "textreview" : "Manai chuney mitho",
+            "rating" : 2,
+        ]
+        
+        
+        let returnFromParse = [a,a, a, a]
+        
+        restaurants = returnFromParse
+        tableView.reloadData()
         
     }
 
@@ -49,29 +76,21 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let restaurant = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as! RestaurantTableViewCell
-        let a : NSDictionary = [
-            "anObject" : "someObject",
-            "helloString" : "this is 1",
-            "magicNumber" : 42,
-            "aValue" : "someValue"
-        ]
         
-        let b : NSDictionary = [
-            "anObject" : "someObject",
-            "helloString" : "this is 2",
-            "magicNumber" : 42,
-            "aValue" : "someValue"
-        ]
-        
-        let c = [a, b]
+        // put the returned [NSDictionary] to the model post
         
         let restaurantcell = Bundle.main.loadNibNamed("RestaurantTableViewCell", owner: self, options: nil)?.first as! RestaurantTableViewCell
         
-        print(">>>>>>>>>>>> indexpath.row: \(c[indexPath.row])")
-        let description = c[indexPath.row]["helloString"]!
+        // use the modal
+        // let currentPost = Review(dictionary: restaurants[indexPath])
         
-        restaurantcell.descriptionLabel.text = description as! String
+        let currentPost = Review(dictionary: restaurants[0])
+        
+        print(">>>>>>>>>>>> indexpath.row: \(currentPost.textreview!)")
+        
+        //restaurantcell.descriptionLabel.text = currentPost.textreview
+        restaurantcell.review = currentPost
+
         
         return restaurantcell
     }

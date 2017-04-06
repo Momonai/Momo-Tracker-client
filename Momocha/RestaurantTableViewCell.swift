@@ -12,6 +12,22 @@ class RestaurantTableViewCell: UITableViewCell {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var restaurantNameLabel: UILabel!
+    
+    var review: Review! {
+        didSet {
+            // get posting user name
+            let postingUserScreenName = "Aadarsha Shaha"
+            
+            // get restaurant name
+            let restaurantName = "Suman daju ko kuyiya momo pasal"
+            
+            descriptionLabel.text = review.textreview
+            userNameLabel.text = postingUserScreenName
+            restaurantNameLabel.text = restaurantName
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
