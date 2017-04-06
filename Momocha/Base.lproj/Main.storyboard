@@ -22,10 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnL-3G-ouO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="414" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4VL-UQ-DS4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,6 +138,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+        </scene>
+        <!--Main Navigation View Controller-->
+        <scene sceneID="0os-bI-QcR">
+            <objects>
+                <viewController id="Tgk-3f-qja" customClass="MainNavigationViewController" customModule="Momocha" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hmW-9P-GeR"/>
+                        <viewControllerLayoutGuide type="bottom" id="yka-eW-3V3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WqM-Oe-2yJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyD-Ap-xvG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dyD-Ap-xvG" firstAttribute="top" secondItem="WqM-Oe-2yJ" secondAttribute="top" id="4np-Gz-sRc"/>
+                            <constraint firstItem="yka-eW-3V3" firstAttribute="top" secondItem="dyD-Ap-xvG" secondAttribute="bottom" id="KUQ-Sx-vY4"/>
+                            <constraint firstAttribute="trailing" secondItem="dyD-Ap-xvG" secondAttribute="trailing" id="TR9-ig-4A0"/>
+                            <constraint firstItem="dyD-Ap-xvG" firstAttribute="leading" secondItem="WqM-Oe-2yJ" secondAttribute="leading" id="t17-ED-sQR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="dyD-Ap-xvG" id="Bk5-DY-MVs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lb1-Cv-FZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="-574.36281859070471"/>
         </scene>
         <!--Restaurant Name-->
         <scene sceneID="t8q-6f-2TA">

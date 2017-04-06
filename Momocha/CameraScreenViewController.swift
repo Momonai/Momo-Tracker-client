@@ -1,5 +1,5 @@
 //
-//  CameraViewController.swift
+//  CameraScreenViewController.swift
 //  Momocha
 //
 //  Created by sammanios on 4/6/17.
@@ -7,36 +7,20 @@
 //
 
 import UIKit
-import SwiftyCam
 
-class CameraViewController: SwiftyCamViewController {
+class CameraScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        // cameraDelegate = self as! SwiftyCamViewControllerDelegate
-        
-        // add capture button
-//        let kaptureButton = UIButton()
-//        kaptureButton.frame = (frame: CGRect(x: self.view.frame.size.width - 60, y: 20, width: 50, height: 50)) as! CGRect
-//        kaptureButton.backgroundColor = UIColor.red
-//        kaptureButton.setTitle("Name your Button ", for: .normal)
-        
-        
-//        let captureButton = SwiftyCamButton(frame: kaptureButton.frame)
-        //captureButton.delegate = self
+        // use this: SwiftyCamViewController
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
     
 
     /*
