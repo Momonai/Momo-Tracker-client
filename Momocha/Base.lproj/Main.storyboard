@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Pas-T6-oXs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DZT-S5-3H9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -151,7 +151,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyD-Ap-xvG">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyD-Ap-xvG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
                         </subviews>
@@ -163,13 +163,14 @@
                             <constraint firstItem="dyD-Ap-xvG" firstAttribute="leading" secondItem="WqM-Oe-2yJ" secondAttribute="leading" id="t17-ED-sQR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WHv-N5-SRc"/>
                     <connections>
                         <outlet property="scrollView" destination="dyD-Ap-xvG" id="Bk5-DY-MVs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lb1-Cv-FZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29.600000000000001" y="-574.36281859070471"/>
+            <point key="canvasLocation" x="968.79999999999995" y="-574.36281859070471"/>
         </scene>
         <!--Restaurant Name-->
         <scene sceneID="t8q-6f-2TA">
@@ -444,6 +445,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TY9-OC-mhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057" y="881"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QP4-Q1-mMe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DZT-S5-3H9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ibf-RR-bUo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tgk-3f-qja" kind="relationship" relationship="rootViewController" id="baZ-eN-Gpk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zev-iW-Ojt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="-574.36281859070471"/>
         </scene>
     </scenes>
 </document>
