@@ -17,6 +17,10 @@
 		5E7F61A91E96811800226177 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61A81E96811800226177 /* MainNavigationViewController.swift */; };
 		5E7F61AE1E96983700226177 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61AC1E96983700226177 /* RestaurantTableViewCell.swift */; };
 		5E7F61AF1E96983700226177 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7F61AD1E96983700226177 /* RestaurantTableViewCell.xib */; };
+		5E7F61B11E96A58800226177 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B01E96A58800226177 /* Restaurant.swift */; };
+		5E7F61B31E96A76B00226177 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E7F61B21E96A76B00226177 /* MapKit.framework */; };
+		5E7F61B51E96C8D700226177 /* MomoUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B41E96C8D700226177 /* MomoUsers.swift */; };
+		5E7F61B71E96D0BD00226177 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B61E96D0BD00226177 /* Review.swift */; };
 		5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED399C61E67B68A005BE061 /* AppDelegate.swift */; };
 		5ED399CC1E67B68A005BE061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CA1E67B68A005BE061 /* Main.storyboard */; };
 		5ED399CE1E67B68A005BE061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CD1E67B68A005BE061 /* Assets.xcassets */; };
@@ -34,6 +38,10 @@
 		5E7F61A81E96811800226177 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		5E7F61AC1E96983700226177 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		5E7F61AD1E96983700226177 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
+		5E7F61B01E96A58800226177 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		5E7F61B21E96A76B00226177 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5E7F61B41E96C8D700226177 /* MomoUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomoUsers.swift; sourceTree = "<group>"; };
+		5E7F61B61E96D0BD00226177 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		5ED399C31E67B68A005BE061 /* Momocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED399C61E67B68A005BE061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED399CB1E67B68A005BE061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E7F61B31E96A76B00226177 /* MapKit.framework in Frameworks */,
 				2DA279650118743820FE14E7 /* Pods_Momocha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +68,7 @@
 		541711DFD7CD5A2E542662D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E7F61B21E96A76B00226177 /* MapKit.framework */,
 				ECCCE102A38B81AEF3DCCF6B /* Pods_Momocha.framework */,
 			);
 			name = Frameworks;
@@ -90,6 +100,9 @@
 		5E2095F91E9661A600789273 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				5E7F61B01E96A58800226177 /* Restaurant.swift */,
+				5E7F61B41E96C8D700226177 /* MomoUsers.swift */,
+				5E7F61B61E96D0BD00226177 /* Review.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -266,7 +279,10 @@
 			files = (
 				5E7F61A91E96811800226177 /* MainNavigationViewController.swift in Sources */,
 				5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */,
+				5E7F61B71E96D0BD00226177 /* Review.swift in Sources */,
 				5E7F61A61E9680FD00226177 /* RestaurantListViewController.swift in Sources */,
+				5E7F61B11E96A58800226177 /* Restaurant.swift in Sources */,
+				5E7F61B51E96C8D700226177 /* MomoUsers.swift in Sources */,
 				5E7F61A21E96806000226177 /* CameraScreenViewController.swift in Sources */,
 				5E7F61AE1E96983700226177 /* RestaurantTableViewCell.swift in Sources */,
 				5E7F619E1E96801500226177 /* UserDetailViewController.swift in Sources */,
