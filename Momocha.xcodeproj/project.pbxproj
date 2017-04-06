@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2DA279650118743820FE14E7 /* Pods_Momocha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCCE102A38B81AEF3DCCF6B /* Pods_Momocha.framework */; };
+		5E2095FB1E9661C300789273 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2095FA1E9661C300789273 /* CameraViewController.swift */; };
 		5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED399C61E67B68A005BE061 /* AppDelegate.swift */; };
-		5ED399C91E67B68A005BE061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED399C81E67B68A005BE061 /* ViewController.swift */; };
 		5ED399CC1E67B68A005BE061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CA1E67B68A005BE061 /* Main.storyboard */; };
 		5ED399CE1E67B68A005BE061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CD1E67B68A005BE061 /* Assets.xcassets */; };
 		5ED399D11E67B68A005BE061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CF1E67B68A005BE061 /* LaunchScreen.storyboard */; };
@@ -17,9 +17,9 @@
 
 /* Begin PBXFileReference section */
 		5CCB59AE9ABE46CA2D4D23D2 /* Pods-Momocha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momocha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Momocha/Pods-Momocha.release.xcconfig"; sourceTree = "<group>"; };
+		5E2095FA1E9661C300789273 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5ED399C31E67B68A005BE061 /* Momocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED399C61E67B68A005BE061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5ED399C81E67B68A005BE061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5ED399CB1E67B68A005BE061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5ED399CD1E67B68A005BE061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ED399D01E67B68A005BE061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +48,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5E2095F71E96619B00789273 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E2095FA1E9661C300789273 /* CameraViewController.swift */,
+			);
+			name = "view controllers";
+			sourceTree = "<group>";
+		};
+		5E2095F81E9661A200789273 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		5E2095F91E9661A600789273 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		5ED399BA1E67B68A005BE061 = {
 			isa = PBXGroup;
 			children = (
@@ -69,8 +91,10 @@
 		5ED399C51E67B68A005BE061 /* Momocha */ = {
 			isa = PBXGroup;
 			children = (
+				5E2095F91E9661A600789273 /* models */,
+				5E2095F81E9661A200789273 /* views */,
+				5E2095F71E96619B00789273 /* view controllers */,
 				5ED399C61E67B68A005BE061 /* AppDelegate.swift */,
-				5ED399C81E67B68A005BE061 /* ViewController.swift */,
 				5ED399CA1E67B68A005BE061 /* Main.storyboard */,
 				5ED399CD1E67B68A005BE061 /* Assets.xcassets */,
 				5ED399CF1E67B68A005BE061 /* LaunchScreen.storyboard */,
@@ -212,8 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ED399C91E67B68A005BE061 /* ViewController.swift in Sources */,
 				5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */,
+				5E2095FB1E9661C300789273 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +403,7 @@
 				5ED399D71E67B68A005BE061 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
