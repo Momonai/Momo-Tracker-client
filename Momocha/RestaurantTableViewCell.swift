@@ -18,10 +18,10 @@ class RestaurantTableViewCell: UITableViewCell {
     var review: Review! {
         didSet {
             // get posting user name
-            let postingUserScreenName = "Aadarsha Shaha"
+            let postingUserScreenName = Parse.getUsernameFromID(id: review.postinguser!)
             
             // get restaurant name
-            let restaurantName = "Suman daju ko kuyiya momo pasal"
+            let restaurantName = Parse.getRestaurantNameFromID(id: review.restaurantmentioned!)
             
             descriptionLabel.text = review.textreview
             userNameLabel.text = postingUserScreenName
