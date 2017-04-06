@@ -16,6 +16,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Here we will go through all the things that our app will need to do after launching
+        // To reference our window
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        // storyboard = Blueprint for how to build your app, so reference it; Main is the default that was built
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // build a navigation controller
+        let diplayNavigationController = storyboard.instantiateViewController(withIdentifier: "MomoNavigationController") as! UINavigationController
+        diplayNavigationController.tabBarItem.title = "Display data"
+        diplayNavigationController.tabBarItem.image = #imageLiteral(resourceName: "cross")
+        
+        // set the top view controller as MainNavigationViewController
+        let displayViewController = diplayNavigationController.topViewController as! MainNavigationViewController
+        
+        // set the endpoint class variable as required
+        // displayViewController.endpoint = "display_rastaurants"
+        
+        // for the top rated tab, create a navigation controller, view controller, and an endpoint
+        let cameraNavigationController = storyboard.instantiateViewController(withIdentifier: "MomoNavigationController") as! UINavigationController
+        cameraNavigationController.tabBarItem.title = "Camera"
+        cameraNavigationController.tabBarItem.image = #imageLiteral(resourceName: "take-photo")
+        let cameraViewController = cameraNavigationController.topViewController as! CameraScreenViewController
+        
+        //cameraViewController.endpoint = "top_rated"
+        
+        // initialize a tabbar and set the default
+        let restaurantsTabBarController = UITabBarController()
+        // list all the viewControllers
+        restaurantsTabBarController.viewControllers = [diplayNavigationController, cameraNavigationController]
+        // start the window with a root view
+        window?.rootViewController = restaurantsTabBarController
+        window?.makeKeyAndVisible()
+        
+        
+        
         return true
     }
 
