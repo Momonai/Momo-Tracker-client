@@ -8,83 +8,194 @@
 
 import UIKit
 import SwiftyCam
+import AVFoundation
 
-class CameraScreenViewController: SwiftyCamViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SwiftyCamViewControllerDelegate {
+class CameraScreenViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate  {
+    
+    // AVCaptureVideoDataOutputSampleBufferDelegate
+    @IBOutlet weak var cameraView: UIView!
+    
+    var photoButton:UIImageView!
+    
+    var crossButton:UIImageView!
+    
+    var imageView:UIImageView!
+    
     var first_time = true
+    
+    let captureSession = AVCaptureSession()
+    
+    var captureDevice: AVCaptureDevice?
+    
+    var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    var frontCamera: Bool = false
+    
+    var shouldTakePhoto:Bool = false
+    
+    var stillImageOutput: AVCaptureStillImageOutput = AVCaptureStillImageOutput()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let captureButton = SwiftyCamButton(frame:CGRect(x:25, y:10, width: 100, height:150))
-        captureButton.delegate = self
+        prepareCamera()
+        addButtons()
         
-        //first_time = true
-        
-
         // Do any additional setup after loading the view.
-        // use this: SwiftyCamViewController
+        captureSession.sessionPreset = AVCaptureSessionPresetPhoto
+        
+    }
+ 
+    
+    @IBAction func onCapture(_ sender: Any) {
+        print("capturing")
+    }
 
+    
+    func prepareCamera() {
+        captureSession.sessionPreset = AVCaptureSessionPresetPhoto
+        
+        if let availableDevices = AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: .back).devices {
+            captureDevice = availableDevices.first
+            
+            print("capture device used: \(captureDevice)")
+            
+            beginSession()
+            addButtons()
+
+            imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+            imageView.contentMode = .scaleAspectFill
+            
+            view.addSubview(imageView)
+        }
+    }
+
+//Adds buttons to camera screen
+func addButtons() {
+    
+    let photoButtonWidth:CGFloat = 65.0
+    photoButton = UIImageView(frame: CGRect(x: view.frame.midX - photoButtonWidth / 2, y: view.frame.height - photoButtonWidth - 20, width: photoButtonWidth, height: photoButtonWidth))
+    photoButton.image = UIImage(named: "take-photo")
+    let photoRecognizer = UITapGestureRecognizer(target: self, action: #selector(takePhoto))
+    photoButton.addGestureRecognizer(photoRecognizer)
+    photoButton.isUserInteractionEnabled = true
+    view.addSubview(photoButton)
+}
+
+
+    func beginSession() {
+
+        do {
+            let captureDeviceInput = try AVCaptureDeviceInput(device: captureDevice)
+            
+            captureSession.addInput(captureDeviceInput)
+        }catch {
+            print(error.localizedDescription)
+        }
+        
+        if let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession) {
+            
+            let bounds = view.layer.bounds
+            previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+            previewLayer.bounds = bounds
+            previewLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
+            
+            self.previewLayer = previewLayer
+            self.view.layer.addSublayer(self.previewLayer!)
+            self.previewLayer?.frame = self.view.layer.frame
+            captureSession.startRunning()
+            
+            let dataOutput = AVCaptureVideoDataOutput()
+            dataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as String):NSNumber(value: kCVPixelFormatType_32BGRA)]
+            dataOutput.alwaysDiscardsLateVideoFrames = true
+            
+            if captureSession.canAddOutput(dataOutput) {
+                captureSession.addOutput(dataOutput)
+            }
+            
+            captureSession.commitConfiguration()
+            
+            let queue = DispatchQueue(label: "captureQueue")
+            dataOutput.setSampleBufferDelegate(self, queue: queue)
+            
+            
+        }
     }
     
-    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didTake photo: UIImage) {
-        // Called when takePhoto() is called or if a SwiftyCamButton initiates a tap gesture
-        // Returns a UIImage captured from the current session
-        print("clicked")
+
+    func takePhoto() {
+        shouldTakePhoto = true
     }
     
-    
-    
-    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didSwitchCameras camera: SwiftyCamViewController.CameraSelection) {
-        // Called when user switches between cameras
-        // Returns current camera selection
-        print("switched camera")
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+        
+        
+        if shouldTakePhoto {
+            shouldTakePhoto = false
+            
+            if let image = getImageFromSampleBuffer(buffer: sampleBuffer) {
+                
+                
+//                let photoButtonWidth:CGFloat = 65.0
+//                photoButton = UIImageView(frame: CGRect(x: view.frame.midX - photoButtonWidth / 2, y: view.frame.height - photoButtonWidth - 20, width: photoButtonWidth, height: photoButtonWidth))
+//                photoButton.image = UIImage(named: "take-photo")
+//                let photoRecognizer = UITapGestureRecognizer(target: self, action: #selector(takePhoto))
+//                photoButton.addGestureRecognizer(photoRecognizer)
+//                photoButton.isUserInteractionEnabled = true
+//                view.addSubview(photoButton)
+                
+                
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                    self.photoButton.isUserInteractionEnabled = false
+                    let crss = UIImage(named: "cross")
+                    
+                    let crossButtonWidth:CGFloat = 65.0
+                    self.crossButton = UIImageView(frame: CGRect(x: self.view.frame.midX - crossButtonWidth / 2, y: self.view.frame.height - crossButtonWidth - 20, width: crossButtonWidth, height: crossButtonWidth))
+                    self.crossButton.image = UIImage(named: "cross")
+                    let crossRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.clearImage))
+                    self.crossButton.addGestureRecognizer(crossRecognizer)
+                    self.crossButton.isUserInteractionEnabled = true
+                    self.view.addSubview(self.crossButton)
+
+                    
+                    
+                    
+//                    let crossButtonWidth:
+//                    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: crss, style: .plain, target: self, action: #selector(self.clearImage))
+                }
+                
+            }
+            
+        }
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        print ("####### came here")
-//        if (!first_time) {
-//            let vc = UIImagePickerController()
-//            vc.delegate = self
-//            vc.allowsEditing = true
-//            
-//            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//                vc.sourceType = .camera
-//            } else {
-//                vc.sourceType = .photoLibrary
-//            }
-//            
-//            self.present(vc, animated: true, completion: nil)
-//        } else {
-//            first_time = false
-//        }
-//        first_time = false
-//    }
+    func getImageFromSampleBuffer(buffer: CMSampleBuffer) -> UIImage? {
+        
+        if let pixelBuffer = CMSampleBufferGetImageBuffer(buffer) {
+            let cIImage = CIImage(cvPixelBuffer: pixelBuffer)
+            let context = CIContext()
+            
+            let imageRect = CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(pixelBuffer), height: CVPixelBufferGetHeight(pixelBuffer))
+            
+            if let image = context.createCGImage(cIImage, from: imageRect) {
+                return UIImage(cgImage: image, scale: UIScreen.main.scale, orientation: .right)
+            }
+        }
+        
+        return nil
+    }
     
-    // delegate to handle the image
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        print("came here with the image")
-//        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-//        
-//        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
-//        
-//        print("image taken and saved")
-//        // dismiss(animated: true, completion: nil)
-//    }
+    func clearImage() {
+        imageView.image = nil
+        photoButton.isUserInteractionEnabled = true
+        // self.navigationItem.leftBarButtonItem = nil
+        
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

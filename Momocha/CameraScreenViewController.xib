@@ -5,12 +5,13 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12118"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraScreenViewController" customModule="Momocha" customModuleProvider="target">
             <connections>
+                <outlet property="cameraView" destination="Cgd-dP-RnG" id="XkJ-Pm-1dC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +19,22 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgd-dP-RnG">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="0.55772330305425388" blue="0.43043740976074496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Cgd-dP-RnG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="18f-Wt-Gsp"/>
+                <constraint firstAttribute="trailing" secondItem="Cgd-dP-RnG" secondAttribute="trailing" id="4KY-HD-hJR"/>
+                <constraint firstItem="Cgd-dP-RnG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AEi-tN-0gU"/>
+                <constraint firstItem="Cgd-dP-RnG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IcR-ar-biJ"/>
+                <constraint firstAttribute="bottom" secondItem="Cgd-dP-RnG" secondAttribute="bottom" id="c6Z-Se-RT4"/>
+                <constraint firstItem="Cgd-dP-RnG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="eEI-AZ-Z8I"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
 </document>
