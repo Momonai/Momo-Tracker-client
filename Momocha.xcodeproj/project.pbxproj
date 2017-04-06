@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DA279650118743820FE14E7 /* Pods_Momocha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCCE102A38B81AEF3DCCF6B /* Pods_Momocha.framework */; };
 		5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED399C61E67B68A005BE061 /* AppDelegate.swift */; };
 		5ED399C91E67B68A005BE061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED399C81E67B68A005BE061 /* ViewController.swift */; };
 		5ED399CC1E67B68A005BE061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CA1E67B68A005BE061 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CCB59AE9ABE46CA2D4D23D2 /* Pods-Momocha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momocha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Momocha/Pods-Momocha.release.xcconfig"; sourceTree = "<group>"; };
 		5ED399C31E67B68A005BE061 /* Momocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED399C61E67B68A005BE061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED399C81E67B68A005BE061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		5ED399CD1E67B68A005BE061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ED399D01E67B68A005BE061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ED399D21E67B68A005BE061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF2B39A4276D2FF606BE3292 /* Pods-Momocha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momocha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Momocha/Pods-Momocha.debug.xcconfig"; sourceTree = "<group>"; };
+		ECCCE102A38B81AEF3DCCF6B /* Pods_Momocha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Momocha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA279650118743820FE14E7 /* Pods_Momocha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		541711DFD7CD5A2E542662D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECCCE102A38B81AEF3DCCF6B /* Pods_Momocha.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5ED399BA1E67B68A005BE061 = {
 			isa = PBXGroup;
 			children = (
 				5ED399C51E67B68A005BE061 /* Momocha */,
 				5ED399C41E67B68A005BE061 /* Products */,
+				78D27F3FC1DBFADE94C872F6 /* Pods */,
+				541711DFD7CD5A2E542662D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = Momocha;
 			sourceTree = "<group>";
 		};
+		78D27F3FC1DBFADE94C872F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF2B39A4276D2FF606BE3292 /* Pods-Momocha.debug.xcconfig */,
+				5CCB59AE9ABE46CA2D4D23D2 /* Pods-Momocha.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5ED399D51E67B68A005BE061 /* Build configuration list for PBXNativeTarget "Momocha" */;
 			buildPhases = (
+				87DFCD7AE91E20739E3C6507 /* [CP] Check Pods Manifest.lock */,
 				5ED399BF1E67B68A005BE061 /* Sources */,
 				5ED399C01E67B68A005BE061 /* Frameworks */,
 				5ED399C11E67B68A005BE061 /* Resources */,
+				738037FA618B9C167D9F997C /* [CP] Embed Pods Frameworks */,
+				8E484ECB704C87CDF88C4360 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		738037FA618B9C167D9F997C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Momocha/Pods-Momocha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87DFCD7AE91E20739E3C6507 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8E484ECB704C87CDF88C4360 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Momocha/Pods-Momocha-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5ED399BF1E67B68A005BE061 /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		5ED399D61E67B68A005BE061 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF2B39A4276D2FF606BE3292 /* Pods-Momocha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K86KHC28SR;
@@ -272,6 +348,7 @@
 		};
 		5ED399D71E67B68A005BE061 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CCB59AE9ABE46CA2D4D23D2 /* Pods-Momocha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K86KHC28SR;

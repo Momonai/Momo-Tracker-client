@@ -6,5 +6,6 @@ target 'Momocha' do
   use_frameworks!
 
   # Pods for Momocha
+  pod "SwiftyCam"
 
 end
