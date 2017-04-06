@@ -15,6 +15,8 @@
 		5E7F61A61E9680FD00226177 /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61A41E9680FD00226177 /* RestaurantListViewController.swift */; };
 		5E7F61A71E9680FD00226177 /* RestaurantListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7F61A51E9680FD00226177 /* RestaurantListViewController.xib */; };
 		5E7F61A91E96811800226177 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61A81E96811800226177 /* MainNavigationViewController.swift */; };
+		5E7F61AE1E96983700226177 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61AC1E96983700226177 /* RestaurantTableViewCell.swift */; };
+		5E7F61AF1E96983700226177 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7F61AD1E96983700226177 /* RestaurantTableViewCell.xib */; };
 		5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED399C61E67B68A005BE061 /* AppDelegate.swift */; };
 		5ED399CC1E67B68A005BE061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CA1E67B68A005BE061 /* Main.storyboard */; };
 		5ED399CE1E67B68A005BE061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CD1E67B68A005BE061 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		5E7F61A41E9680FD00226177 /* RestaurantListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		5E7F61A51E9680FD00226177 /* RestaurantListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantListViewController.xib; sourceTree = "<group>"; };
 		5E7F61A81E96811800226177 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
+		5E7F61AC1E96983700226177 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		5E7F61AD1E96983700226177 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
 		5ED399C31E67B68A005BE061 /* Momocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED399C61E67B68A005BE061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED399CB1E67B68A005BE061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		5E2095F81E9661A200789273 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				5E7F61AC1E96983700226177 /* RestaurantTableViewCell.swift */,
+				5E7F61AD1E96983700226177 /* RestaurantTableViewCell.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 				5E7F61A71E9680FD00226177 /* RestaurantListViewController.xib in Resources */,
 				5E7F61A31E96806000226177 /* CameraScreenViewController.xib in Resources */,
 				5E7F619F1E96801500226177 /* UserDetailViewController.xib in Resources */,
+				5E7F61AF1E96983700226177 /* RestaurantTableViewCell.xib in Resources */,
 				5ED399CC1E67B68A005BE061 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +268,7 @@
 				5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */,
 				5E7F61A61E9680FD00226177 /* RestaurantListViewController.swift in Sources */,
 				5E7F61A21E96806000226177 /* CameraScreenViewController.swift in Sources */,
+				5E7F61AE1E96983700226177 /* RestaurantTableViewCell.swift in Sources */,
 				5E7F619E1E96801500226177 /* UserDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
