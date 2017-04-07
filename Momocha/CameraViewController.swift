@@ -85,23 +85,13 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
         descriptionTextField.backgroundColor = UIColor.gray
         descriptionTextField.becomeFirstResponder()
+        descriptionTextField.clearButtonMode = UITextFieldViewMode.whileEditing
             
         let pan = UIPanGestureRecognizer(target: self, action: #selector(didPanTextField))
         descriptionTextField.addGestureRecognizer(pan)
+        descriptionTextField.autocorrectionType = UITextAutocorrectionType.no
         
         self.view.addSubview(descriptionTextField)
-        
-        
-        
-//        let stepsTextField = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
-//        stepsTextField.placeholder = "Enter text here"
-//        stepsTextField.font = UIFont.systemFont(ofSize: 15)
-//        stepsTextField.borderStyle = UITextBorderStyle.roundedRect
-//        stepsTextField.autocorrectionType = UITextAutocorrectionType.no
-//        stepsTextField.keyboardType = UIKeyboardType.default
-//        stepsTextField.returnKeyType = UIReturnKeyType.done
-//        stepsTextField.clearButtonMode = UITextFieldViewMode.whileEditing;
-//        stepsTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.centerf
     }
     
     
@@ -110,8 +100,12 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         print("came to sto editing")
         clickedImageView.gestureRecognizers?.removeAll()
         // add gesture to tap to start editing
-        let tap = UITapGestureRecognizer(target: self, action: #selector(writeDescription))
-        clickedImageView.addGestureRecognizer(tap)
+        if descriptionTextField.text == "" {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(writeDescription))
+            clickedImageView.addGestureRecognizer(tap)
+        } else {
+            print("this should be empty\(descriptionTextField.text) right")
+        }
     }
     
     
@@ -127,13 +121,53 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             
             print("Gesture is changing")
         } else if sender.state == .ended {
+            textViewCenter = CGPoint(x: descriptionTextField.center.x , y: descriptionTextField.center.y)
             print("Gesture ended")
         }
     }
     
     func addReviewDetails() {
         print("create a segue into adding more details")
+        let finalImage = textToImage(drawText: descriptionTextField.text! as NSString, inImage: clickedImageView.image!, atPoint: textViewCenter)
+        
+        let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        let imageView = UIImageView(frame: CGRect(x: 220, y: 10, width: 40, height: 40))
+        imageView.image = finalImage
+        
+        alertController.view.addSubview(imageView)
+        
+        
+        present(alertController, animated: true, completion: nil)
     }
+    
+    
+    
+    func textToImage(drawText text: NSString, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
+        let textColor = UIColor.white
+        let textFont = UIFont(name: "Helvetica Bold", size: 12)!
+        
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(image.size, false, scale)
+        
+        let textFontAttributes = [
+            NSFontAttributeName: textFont,
+            NSForegroundColorAttributeName: textColor,
+            ] as [String : Any]
+        image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
+        
+        let rect = CGRect(origin: point, size: image.size)
+        text.draw(in: rect, withAttributes: textFontAttributes)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
     
     func prepareCamera() {
         let vc = UIImagePickerController()
