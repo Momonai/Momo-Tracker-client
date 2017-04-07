@@ -18,27 +18,21 @@ class AddImageDetailViewController: UIViewController {
     var location: CLLocationCoordinate2D!
     var editedImage: UIImage!
     
+    
+    @IBOutlet weak var restarurantAddressTextFieldView: UITextField!
+    
+    @IBOutlet weak var restaurantNameTextFieldView: UITextField!
+    @IBOutlet weak var reviewImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print ("came to add detail with: \(String(describing: textreview))")
+        reviewImageView.image = editedImage
+        
     }
-    
-//    func displayAsAlert(text: String!, image: UIImage!) {
-//        let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
-//        
-//        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alertController.addAction(defaultAction)
-//        
-//        let imageView = UIImageView(frame: CGRect(x: alertController.view.center.x, y: 10, width: 140, height: 140))
-//        imageView.image = image
-//        
-//        alertController.view.addSubview(imageView)
-//        
-//        present(alertController, animated: true, completion: nil)
-//
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
