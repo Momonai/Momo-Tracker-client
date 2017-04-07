@@ -97,14 +97,29 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     func stopEditing() {
         descriptionTextField.endEditing(true)
-        print("came to sto editing")
+        print("came to stop editing")
         clickedImageView.gestureRecognizers?.removeAll()
         // add gesture to tap to start editing
         if descriptionTextField.text == "" {
+//            clickedImageView.subviews.forEach({$0.removeFromSuperview()})
+            //clickedImageView.subviews.removeAll()
+            //print("Subviews: \(clickedImageView.subviews)")
+            print("its empty")
+            
+            for v in self.view.subviews {
+                print ("harey")
+                // print("\(v)")
+                if v is UITextField {
+                    v.removeFromSuperview()
+                    print("<><>if here then should do<><>")
+                }
+            }
+            print("its empty")
+
             let tap = UITapGestureRecognizer(target: self, action: #selector(writeDescription))
             clickedImageView.addGestureRecognizer(tap)
         } else {
-            print("this should be empty\(descriptionTextField.text) right")
+            print("this should not be empty\(descriptionTextField.text) right")
         }
     }
     
