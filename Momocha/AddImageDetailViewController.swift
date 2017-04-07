@@ -31,7 +31,10 @@ class AddImageDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         print ("came to add detail with: \(String(describing: textreview))")
         reviewImageView.image = editedImage
-        
+    }
+    
+    @IBAction func onUpload(_ sender: Any) {
+        print("works")
     }
 
     override func didReceiveMemoryWarning() {
