@@ -32,21 +32,32 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             clickedImageView.frame = self.view.frame
             clickedImageView.backgroundColor = .black
             clickedImageView.contentMode = .scaleAspectFit
-            clickedImageView.isUserInteractionEnabled = false
+            clickedImageView.isUserInteractionEnabled = true
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(writeDescription))
+            clickedImageView.addGestureRecognizer(tap)
+            
             self.view.addSubview(clickedImageView)
             
             // add a cross button
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .plain, target: self, action: #selector(dismissFullscreenImage))
-
             
-//            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
-//            newImageView.addGestureRecognizer(tap)
-//            self.view.addSubview(newImageView)
+            // add a ok button
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image:UIImage(named: "take-photo"), style: .plain, target: self, action: #selector(addReviewDetails))
             
         } else {
             print("camera screen accessed \n")
+            print("image when empty:\(pickedImage)")
             prepareCamera()
         }
+    }
+    
+    func writeDescription() {
+        print("tapped")
+    }
+    
+    func addReviewDetails() {
+        print("create a segue into adding more details")
     }
     
     func prepareCamera() {
@@ -66,8 +77,9 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     func dismissFullscreenImage() {
         clickedImageView.removeFromSuperview()
         // recreate the camera
+        hasImage = false
+        pickedImage = nil
         prepareCamera()
-        
     }
     
     override func didReceiveMemoryWarning() {
