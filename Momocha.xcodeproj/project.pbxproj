@@ -23,6 +23,7 @@
 		5E7F61B71E96D0BD00226177 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B61E96D0BD00226177 /* Review.swift */; };
 		5E7F61BA1E96DF4300226177 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B91E96DF4300226177 /* Parse.swift */; };
 		5EC63C1D1E970BEB005D91F0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC63C1C1E970BEB005D91F0 /* CameraViewController.swift */; };
+		5EC63C1F1E97114A005D91F0 /* AddImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC63C1E1E97114A005D91F0 /* AddImageDetailViewController.swift */; };
 		5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED399C61E67B68A005BE061 /* AppDelegate.swift */; };
 		5ED399CC1E67B68A005BE061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CA1E67B68A005BE061 /* Main.storyboard */; };
 		5ED399CE1E67B68A005BE061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED399CD1E67B68A005BE061 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		5E7F61B61E96D0BD00226177 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		5E7F61B91E96DF4300226177 /* Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 		5EC63C1C1E970BEB005D91F0 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		5EC63C1E1E97114A005D91F0 /* AddImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageDetailViewController.swift; sourceTree = "<group>"; };
 		5ED399C31E67B68A005BE061 /* Momocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED399C61E67B68A005BE061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED399CB1E67B68A005BE061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				5E7F61A51E9680FD00226177 /* RestaurantListViewController.xib */,
 				5E7F61A81E96811800226177 /* MainNavigationViewController.swift */,
 				5EC63C1C1E970BEB005D91F0 /* CameraViewController.swift */,
+				5EC63C1E1E97114A005D91F0 /* AddImageDetailViewController.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				5EC63C1D1E970BEB005D91F0 /* CameraViewController.swift in Sources */,
 				5E7F61A91E96811800226177 /* MainNavigationViewController.swift in Sources */,
 				5E7F61BA1E96DF4300226177 /* Parse.swift in Sources */,
+				5EC63C1F1E97114A005D91F0 /* AddImageDetailViewController.swift in Sources */,
 				5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */,
 				5E7F61B71E96D0BD00226177 /* Review.swift in Sources */,
 				5E7F61A61E9680FD00226177 /* RestaurantListViewController.swift in Sources */,
