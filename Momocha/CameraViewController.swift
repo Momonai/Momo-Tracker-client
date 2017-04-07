@@ -18,6 +18,10 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     var userCanceledClickingImage: Bool! = false
     
+    var descriptionTextField: UITextField!
+    var textViewCenter: CGPoint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,14 +69,30 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
-    func writeDescription() {
+    func writeDescription(_ sender: UIPanGestureRecognizer) {
         print("tapped")
         // display image
+        // clickedImageView.removeGestureRecognizer()
+        // remove all gesture recognizers
+        clickedImageView.gestureRecognizers?.removeAll()
         
-        let descriptionTextField = UITextField(frame: CGRect(x: 0, y: (self.view.frame.height) / 2, width: self.view.frame.width, height: 40))
+        // add tap to stop editing
+        let tap = UITapGestureRecognizer(target: self, action: #selector(stopEditing))
+        clickedImageView.addGestureRecognizer(tap)
+
+        
+        descriptionTextField = UITextField(frame: CGRect(x: 0, y: (self.view.frame.height) / 2, width: self.view.frame.width, height: 40))
+        textViewCenter = CGPoint(x: descriptionTextField.center.x , y: descriptionTextField.center.y)
+        
         descriptionTextField.backgroundColor = UIColor.gray
         descriptionTextField.becomeFirstResponder()
+            
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPanTextField))
+        descriptionTextField.addGestureRecognizer(pan)
+        
         self.view.addSubview(descriptionTextField)
+        
+        
         
 //        let stepsTextField = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
 //        stepsTextField.placeholder = "Enter text here"
@@ -82,13 +102,32 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
 //        stepsTextField.keyboardType = UIKeyboardType.default
 //        stepsTextField.returnKeyType = UIReturnKeyType.done
 //        stepsTextField.clearButtonMode = UITextFieldViewMode.whileEditing;
-//        stepsTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+//        stepsTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.centerf
+    }
+    
+    
+    func stopEditing() {
+        clickedImageView.gestureRecognizers?.removeAll()
+        // add gesture to tap to start editing
+        let tap = UITapGestureRecognizer(target: self, action: #selector(writeDescription))
+        clickedImageView.addGestureRecognizer(tap)
+    }
+    
+    
+    func didPanTextField(_ sender: UIPanGestureRecognizer) {
+        //  access the translation parameter of the UIPanGestureRecocognizer and store it in a constant.
+        let translation = sender.translation(in: view)
         
-//        clickedImageView = UIImageView(image: pickedImage)
-//        clickedImageView.frame = self.view.frame
-//        clickedImageView.backgroundColor = .black
-//        clickedImageView.contentMode = .scaleAspectFit
-//        clickedImageView.isUserInteractionEnabled = true
+        if sender.state == .began {
+            textViewCenter = CGPoint(x: descriptionTextField.center.x , y: descriptionTextField.center.y)
+            print("Gesture began")
+        } else if sender.state == .changed {
+            descriptionTextField.center = CGPoint(x: 0, y: textViewCenter.y + translation.y)
+            
+            print("Gesture is changing")
+        } else if sender.state == .ended {
+            print("Gesture ended")
+        }
     }
     
     func addReviewDetails() {
