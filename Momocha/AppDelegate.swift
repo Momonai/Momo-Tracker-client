@@ -45,8 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = restaurantsTabBarController
         window?.makeKeyAndVisible()
         
-        
-        
         return true
     }
 
