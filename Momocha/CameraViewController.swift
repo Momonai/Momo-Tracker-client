@@ -45,24 +45,29 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             
         } else {
             print("camera screen accessed \n")
-            
-            let vc = UIImagePickerController()
-            vc.delegate = self
-            vc.allowsEditing = true
-            
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                vc.sourceType = .camera
-            } else {
-                vc.sourceType = .photoLibrary
-            }
-            
-            self.present(vc, animated: true, completion:nil)
+            prepareCamera()
         }
+    }
+    
+    func prepareCamera() {
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            vc.sourceType = .camera
+        } else {
+            vc.sourceType = .photoLibrary
+        }
+        
+        self.present(vc, animated: true, completion:nil)
     }
 
     func dismissFullscreenImage() {
-//        self.removeFromSuperview()
         clickedImageView.removeFromSuperview()
+        // recreate the camera
+        prepareCamera()
+        
     }
     
     override func didReceiveMemoryWarning() {
