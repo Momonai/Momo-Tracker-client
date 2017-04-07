@@ -16,6 +16,8 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     var clickedImageView: UIImageView!
     
+    var userCanceledClickingImage: Bool! = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,13 +49,46 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             
         } else {
             print("camera screen accessed \n")
-            print("image when empty:\(pickedImage)")
-            prepareCamera()
+            if userCanceledClickingImage {
+                userCanceledClickingImage = false
+                // segue to other tab
+                // performSegue(withIdentifier: "addDetailSegue", sender: self)
+                // UIWindow.rootVi?.selectedIndex = 1
+                // make it change to the next tab, cant do for now
+                // dismiss(animated: true, completion: nil)
+                print("change to the details tab on cancle")
+                prepareCamera()
+                
+            } else {
+                prepareCamera()
+            }
         }
     }
     
     func writeDescription() {
         print("tapped")
+        // display image
+        
+        let descriptionTextField = UITextField(frame: CGRect(x: 0, y: (self.view.frame.height) / 2, width: self.view.frame.width, height: 40))
+        descriptionTextField.placeholder = "Enter TExt HERE"
+        descriptionTextField.backgroundColor = .red
+        self.view.addSubview(descriptionTextField)
+        
+//        let stepsTextField = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
+//        stepsTextField.placeholder = "Enter text here"
+//        stepsTextField.font = UIFont.systemFont(ofSize: 15)
+//        stepsTextField.borderStyle = UITextBorderStyle.roundedRect
+//        stepsTextField.autocorrectionType = UITextAutocorrectionType.no
+//        stepsTextField.keyboardType = UIKeyboardType.default
+//        stepsTextField.returnKeyType = UIReturnKeyType.done
+//        stepsTextField.clearButtonMode = UITextFieldViewMode.whileEditing;
+//        stepsTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        
+//        clickedImageView = UIImageView(image: pickedImage)
+//        clickedImageView.frame = self.view.frame
+//        clickedImageView.backgroundColor = .black
+//        clickedImageView.contentMode = .scaleAspectFit
+//        clickedImageView.isUserInteractionEnabled = true
     }
     
     func addReviewDetails() {
@@ -103,8 +138,17 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
         // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)
-        // performSegue(withIdentifier: "addDetailSegue", sender: self)
+//         performSegue(withIdentifier: "addDetailSegue", sender: self)
     }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("user cancled")
+        userCanceledClickingImage = true
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
