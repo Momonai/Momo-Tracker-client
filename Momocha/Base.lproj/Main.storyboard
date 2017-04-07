@@ -174,6 +174,7 @@
                         <outlet property="restarurantAddressTextFieldView" destination="swu-zW-TAg" id="Tdf-2E-ide"/>
                         <outlet property="restaurantNameTextFieldView" destination="qdh-eL-DyL" id="T6d-Ou-b3A"/>
                         <outlet property="reviewImageView" destination="49J-3f-40m" id="uZt-z1-FeF"/>
+                        <outlet property="starRatingView" destination="JUW-AV-xrh" id="cwf-1g-hDe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="454-ki-PYU" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Cosmos
 
 class AddImageDetailViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class AddImageDetailViewController: UIViewController {
     var location: CLLocationCoordinate2D!
     var editedImage: UIImage!
     
+    @IBOutlet weak var starRatingView: CosmosView!
     
     @IBOutlet weak var restarurantAddressTextFieldView: UITextField!
     
@@ -31,6 +33,7 @@ class AddImageDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         print ("came to add detail with: \(String(describing: textreview))")
         reviewImageView.image = editedImage
+        starRatingView.rating = 0
     }
     
     @IBAction func onUpload(_ sender: Any) {
@@ -39,6 +42,7 @@ class AddImageDetailViewController: UIViewController {
 
     @IBAction func onBack(_ sender: Any) {
         print("workds too")
+        
     }
     
     override func didReceiveMemoryWarning() {
