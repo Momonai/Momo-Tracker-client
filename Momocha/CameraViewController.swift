@@ -11,6 +11,7 @@ import UIKit
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     var pickedImage: UIImage!
+    var finalImage: UIImage!
     
     var hasImage: Bool! = false
     
@@ -135,7 +136,6 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     func addReviewDetails() {
         print("create a segue into adding more details")
-        let finalImage: UIImage
         if descriptionTextView == nil {
             finalImage = clickedImageView.image!
         } else {
@@ -143,18 +143,6 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             finalImage = textToImage1(text: descriptionTextView.text!, image: clickedImageView.image!, point: textViewCenter)
         }
         
-//        let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
-//        
-//        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alertController.addAction(defaultAction)
-//        
-//        let imageView = UIImageView(frame: CGRect(x: alertController.view.center.x, y: 10, width: 140, height: 140))
-//        imageView.image = finalImage
-//        
-//        alertController.view.addSubview(imageView)
-//        
-//        
-//        present(alertController, animated: true, completion: nil)
         performSegue(withIdentifier: "addDetailsSegue", sender: self)
     }
     
@@ -165,8 +153,6 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         imageView.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         
         // hardcoded value
-//        let label = UILabel(frame: CGRect(x: point.x, y: point.y, width: image.size.width, height: 40))
-        print ("Point.y:  \(point.y)")
         let label = UILabel(frame: CGRect(x: 0, y: point.y, width: image.size.width, height: 40))
 
 
@@ -250,13 +236,24 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         print("preparing for segue")
-//        postinguser = dictionary["postinguser"] as? Int
-//        restaurantmentioned = dictionary["restaurantmentioned"] as? Int
-//        location = dictionary["location"] as? CLLocationCoordinate2D
-//        textreview = dictionary["textreview"] as? String
-//        rating = dictionary["rating"] as? Int
+//
+//        var textreview: String!
+//        var rating: Int!
+//        var restaurantmentioned: Int!
+//        var postinguser: Int!
+//        var location: CLLocationCoordinate2D!
+
+        
+        
         if segue.identifier == "addDetailsSegue" {
-            print ("ho ho ho ")
+            let addImageDetailViewController = segue.destination as! AddImageDetailViewController
+            addImageDetailViewController.editedImage = self.finalImage
+            if self.descriptionTextView != nil {
+                addImageDetailViewController.textreview = self.descriptionTextView.text
+            } else {
+                addImageDetailViewController.textreview = "No description"
+            }
+            print("segue to addDetails")
         }
     }
 

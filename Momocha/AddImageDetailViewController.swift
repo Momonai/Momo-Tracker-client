@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import MapKit
 
 class AddImageDetailViewController: UIViewController {
 
+    var textreview: String!
+    var rating: Int!
+    var restaurantmentioned: Int!
+    var postinguser: Int!
+    var location: CLLocationCoordinate2D!
+    var editedImage: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print ("came to add detail")
+        print ("came to add detail with: \(String(describing: textreview))")
     }
+    
+//    func displayAsAlert(text: String!, image: UIImage!) {
+//        let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
+//        
+//        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//        alertController.addAction(defaultAction)
+//        
+//        let imageView = UIImageView(frame: CGRect(x: alertController.view.center.x, y: 10, width: 140, height: 140))
+//        imageView.image = image
+//        
+//        alertController.view.addSubview(imageView)
+//        
+//        present(alertController, animated: true, completion: nil)
+//
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
