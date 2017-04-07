@@ -101,20 +101,11 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         clickedImageView.gestureRecognizers?.removeAll()
         // add gesture to tap to start editing
         if descriptionTextField.text == "" {
-//            clickedImageView.subviews.forEach({$0.removeFromSuperview()})
-            //clickedImageView.subviews.removeAll()
-            //print("Subviews: \(clickedImageView.subviews)")
-            print("its empty")
-            
             for v in self.view.subviews {
-                print ("harey")
-                // print("\(v)")
                 if v is UITextField {
                     v.removeFromSuperview()
-                    print("<><>if here then should do<><>")
                 }
             }
-            print("its empty")
 
             let tap = UITapGestureRecognizer(target: self, action: #selector(writeDescription))
             clickedImageView.addGestureRecognizer(tap)
@@ -132,7 +123,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             textViewCenter = CGPoint(x: descriptionTextField.center.x , y: descriptionTextField.center.y)
             print("Gesture began")
         } else if sender.state == .changed {
-            descriptionTextField.center = CGPoint(x: 0, y: textViewCenter.y + translation.y)
+            descriptionTextField.center = CGPoint(x: textViewCenter.x, y: textViewCenter.y + translation.y)
             
             print("Gesture is changing")
         } else if sender.state == .ended {
@@ -143,14 +134,19 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     func addReviewDetails() {
         print("create a segue into adding more details")
-        let finalImage = textToImage(drawText: descriptionTextField.text! as NSString, inImage: clickedImageView.image!, atPoint: textViewCenter)
+        let finalImage: UIImage
+        if descriptionTextField.text == "" {
+            finalImage = clickedImageView.image!
+        } else {
+            finalImage = textToImage(drawText: descriptionTextField.text! as NSString, inImage: clickedImageView.image!, atPoint: textViewCenter)
+        }
         
         let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(defaultAction)
         
-        let imageView = UIImageView(frame: CGRect(x: 220, y: 10, width: 40, height: 40))
+        let imageView = UIImageView(frame: CGRect(x: alertController.view.center.x, y: 10, width: 140, height: 140))
         imageView.image = finalImage
         
         alertController.view.addSubview(imageView)
@@ -164,6 +160,8 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     func textToImage(drawText text: NSString, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
         let textColor = UIColor.white
         let textFont = UIFont(name: "Helvetica Bold", size: 12)!
+        let bgColor = UIColor.gray
+        
         
         let scale = UIScreen.main.scale
         UIGraphicsBeginImageContextWithOptions(image.size, false, scale)
@@ -171,6 +169,8 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         let textFontAttributes = [
             NSFontAttributeName: textFont,
             NSForegroundColorAttributeName: textColor,
+            NSBackgroundColorAttributeName: bgColor,
+            
             ] as [String : Any]
         image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
         
