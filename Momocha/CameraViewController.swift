@@ -18,7 +18,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     var userCanceledClickingImage: Bool! = false
     
-    var descriptionTextField: UITextField!
+    var descriptionTextView: UITextView!
     var textViewCenter: CGPoint!
     
     
@@ -27,7 +27,6 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
 
         // Do any additional setup after loading the view.
         
-            
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,28 +79,29 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         clickedImageView.addGestureRecognizer(tap)
 
         
-        descriptionTextField = UITextField(frame: CGRect(x: 0, y: (self.view.frame.height) / 2, width: self.view.frame.width, height: 40))
-        descriptionTextField.textColor = UIColor.white
-        textViewCenter = CGPoint(x: descriptionTextField.center.x , y: descriptionTextField.center.y)
+        descriptionTextView = UITextView(frame: CGRect(x: 0, y: (self.view.frame.height) / 2, width: self.view.frame.width, height: 40))
+        descriptionTextView.textColor = UIColor.white
+        descriptionTextView.textAlignment = .center
+        textViewCenter = CGPoint(x: descriptionTextView.center.x , y: descriptionTextView.center.y)
         
-        descriptionTextField.backgroundColor = UIColor.gray
-        descriptionTextField.becomeFirstResponder()
-        descriptionTextField.clearButtonMode = UITextFieldViewMode.whileEditing
-            
+        descriptionTextView.backgroundColor = UIColor.gray
+        descriptionTextView.becomeFirstResponder()
+        // descriptionTextView.cha
+        
         let pan = UIPanGestureRecognizer(target: self, action: #selector(didPanTextField))
-        descriptionTextField.addGestureRecognizer(pan)
-        descriptionTextField.autocorrectionType = UITextAutocorrectionType.no
+        descriptionTextView.addGestureRecognizer(pan)
+        descriptionTextView.autocorrectionType = UITextAutocorrectionType.no
         
-        self.view.addSubview(descriptionTextField)
+        self.view.addSubview(descriptionTextView)
     }
     
     
     func stopEditing() {
-        descriptionTextField.endEditing(true)
+        descriptionTextView.endEditing(true)
         print("came to stop editing")
         clickedImageView.gestureRecognizers?.removeAll()
         // add gesture to tap to start editing
-        if descriptionTextField.text == "" {
+        if descriptionTextView.text == "" {
             for v in self.view.subviews {
                 if v is UITextField {
                     v.removeFromSuperview()
@@ -111,7 +111,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             let tap = UITapGestureRecognizer(target: self, action: #selector(writeDescription))
             clickedImageView.addGestureRecognizer(tap)
         } else {
-            print("this should not be empty\(descriptionTextField.text) right")
+            print("this should not be empty\(descriptionTextView.text) right")
         }
     }
     
@@ -121,14 +121,14 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         let translation = sender.translation(in: view)
         
         if sender.state == .began {
-            textViewCenter = CGPoint(x: descriptionTextField.center.x , y: descriptionTextField.center.y)
+            textViewCenter = CGPoint(x: descriptionTextView.center.x , y: descriptionTextView.center.y)
             print("Gesture began")
         } else if sender.state == .changed {
-            descriptionTextField.center = CGPoint(x: textViewCenter.x, y: textViewCenter.y + translation.y)
+            descriptionTextView.center = CGPoint(x: textViewCenter.x, y: textViewCenter.y + translation.y)
             
             print("Gesture is changing")
         } else if sender.state == .ended {
-            textViewCenter = CGPoint(x: descriptionTextField.center.x , y: descriptionTextField.center.y)
+            textViewCenter = CGPoint(x: descriptionTextView.center.x , y: descriptionTextView.center.y)
             print("Gesture ended")
         }
     }
@@ -136,11 +136,11 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     func addReviewDetails() {
         print("create a segue into adding more details")
         let finalImage: UIImage
-        if descriptionTextField.text == "" {
+        if descriptionTextView == nil {
             finalImage = clickedImageView.image!
         } else {
-            // finalImage = textToImage(drawText: descriptionTextField.text! as NSString, inImage: clickedImageView.image!, atPoint: textViewCenter)
-            finalImage = textToImage1(text: descriptionTextField.text!, image: clickedImageView.image!, point: textViewCenter)
+            // finalImage = textToImage(drawText: descriptionTextView.text! as NSString, inImage: clickedImageView.image!, atPoint: textViewCenter)
+            finalImage = textToImage1(text: descriptionTextView.text!, image: clickedImageView.image!, point: textViewCenter)
         }
         
         let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
@@ -163,45 +163,29 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         imageView.backgroundColor = UIColor.clear
         imageView.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         
-        let label = UILabel(frame: CGRect(x: point.x, y: point.y, width: image.size.width, height: image.size.height))
-        label.backgroundColor = UIColor.clear
+        // hardcoded value
+//        let label = UILabel(frame: CGRect(x: point.x, y: point.y, width: image.size.width, height: 40))
+        print ("Point.y:  \(point.y)")
+        let label = UILabel(frame: CGRect(x: 0, y: point.y, width: image.size.width, height: 40))
+
+
+
+        label.backgroundColor = UIColor.gray
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.text = text
+        label.numberOfLines = 0
+        // label.sizeToFit()
         
-        UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0);
+        
+        
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, 0);
         imageView.layer.render(in: UIGraphicsGetCurrentContext()!)
         label.layer.render(in: UIGraphicsGetCurrentContext()!)
         let imageWithText = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
         
         return imageWithText!
-    }
-    
-    func textToImage(drawText text: NSString, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
-        let textColor = UIColor.white
-        let textFont = UIFont(name: "Helvetica Bold", size: 12)!
-        let bgColor = UIColor.gray
-        
-        
-        let scale = UIScreen.main.scale
-        UIGraphicsBeginImageContextWithOptions(image.size, false, scale)
-        
-        let textFontAttributes = [
-            NSFontAttributeName: textFont,
-            NSForegroundColorAttributeName: textColor,
-            NSBackgroundColorAttributeName: bgColor,
-            
-            ] as [String : Any]
-        image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
-        
-        let rect = CGRect(origin: point, size: image.size)
-        text.draw(in: rect, withAttributes: textFontAttributes)
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage!
     }
     
     
@@ -257,7 +241,6 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         userCanceledClickingImage = true
         dismiss(animated: true, completion: nil)
     }
-    
     
     // MARK: - Navigation
 
