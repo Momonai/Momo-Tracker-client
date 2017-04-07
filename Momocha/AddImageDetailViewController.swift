@@ -37,10 +37,16 @@ class AddImageDetailViewController: UIViewController {
         print("works")
     }
 
+    @IBAction func onBack(_ sender: Any) {
+        print("workds too")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*

@@ -138,6 +138,9 @@
                                     <constraint firstAttribute="height" constant="45" id="tvD-FW-HXV"/>
                                 </constraints>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="onBack:" destination="Gna-pe-i9W" eventType="touchUpInside" id="enO-fj-VrC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
