@@ -14,10 +14,36 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     var hasImage: Bool! = false
     
+    var clickedImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+            
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if hasImage {
+            print ("Photo clicked and now being displayed")
+            // display image
+            clickedImageView = UIImageView(image: pickedImage)
+            clickedImageView.frame = self.view.frame
+            clickedImageView.backgroundColor = .black
+            clickedImageView.contentMode = .scaleAspectFit
+            clickedImageView.isUserInteractionEnabled = false
+            self.view.addSubview(clickedImageView)
+            
+            // add a cross button
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .plain, target: self, action: #selector(dismissFullscreenImage))
+
+            
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+//            newImageView.addGestureRecognizer(tap)
+//            self.view.addSubview(newImageView)
+            
+        } else {
             print("camera screen accessed \n")
             
             let vc = UIImagePickerController()
@@ -31,18 +57,14 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             }
             
             self.present(vc, animated: true, completion:nil)
-            
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("came her")
-        if hasImage {
-            print ("This is good")
-        } else {
-            print ("Not good")
         }
     }
 
+    func dismissFullscreenImage() {
+//        self.removeFromSuperview()
+        clickedImageView.removeFromSuperview()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
