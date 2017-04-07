@@ -28,24 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         diplayNavigationController.tabBarItem.title = "Display data"
         diplayNavigationController.tabBarItem.image = #imageLiteral(resourceName: "cross")
         
-        // set the top view controller as MainNavigationViewController
-        let displayViewController = diplayNavigationController.topViewController as! MainNavigationViewController
-        
         // set the endpoint class variable as required
-        // displayViewController.endpoint = "display_rastaurants"
         
         // for the top rated tab, create a navigation controller, view controller, and an endpoint
         let cameraNavigationController = storyboard.instantiateViewController(withIdentifier: "CameraNavigationController") as! UINavigationController
         cameraNavigationController.tabBarItem.title = "Camera"
         cameraNavigationController.tabBarItem.image = #imageLiteral(resourceName: "take-photo")
-        let cameraViewController = cameraNavigationController.topViewController as! CameraViewController
-        
-        //cameraViewController.endpoint = "top_rated"
         
         // initialize a tabbar and set the default
-        let restaurantsTabBarController = UITabBarController()
+        var restaurantsTabBarController = UITabBarController()
+        
         // list all the viewControllers
         restaurantsTabBarController.viewControllers = [cameraNavigationController, diplayNavigationController]
+        
         // start the window with a root view
         window?.rootViewController = restaurantsTabBarController
         window?.makeKeyAndVisible()

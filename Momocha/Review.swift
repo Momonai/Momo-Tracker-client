@@ -15,13 +15,13 @@ class Review: NSObject {
     var restaurantmentioned: Int?
     var location: CLLocationCoordinate2D?
     var textreview: String?
-    var rating: Int?
+    var rating: Double?
     
     init(dictionary: NSDictionary) {
         postinguser = dictionary["postinguser"] as? Int
         restaurantmentioned = dictionary["restaurantmentioned"] as? Int
         location = dictionary["location"] as? CLLocationCoordinate2D
         textreview = dictionary["textreview"] as? String
-        rating = dictionary["rating"] as? Int
+        rating = dictionary["rating"] as? Double
     }
 }
