@@ -25,7 +25,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="MoMocha" id="HH8-nh-wxt"/>
                     <connections>
-                        <segue destination="Gna-pe-i9W" kind="showDetail" identifier="addDetailSegue" id="lGP-8x-42A"/>
+                        <segue destination="Gna-pe-i9W" kind="showDetail" identifier="addDetailsSegue" id="lGP-8x-42A"/>
                         <segue destination="Av1-QR-tLC" kind="show" identifier="showUserInfoSegue" id="IuD-8i-fhr"/>
                     </connections>
                 </viewController>

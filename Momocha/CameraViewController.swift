@@ -143,18 +143,19 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             finalImage = textToImage1(text: descriptionTextView.text!, image: clickedImageView.image!, point: textViewCenter)
         }
         
-        let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        let imageView = UIImageView(frame: CGRect(x: alertController.view.center.x, y: 10, width: 140, height: 140))
-        imageView.image = finalImage
-        
-        alertController.view.addSubview(imageView)
-        
-        
-        present(alertController, animated: true, completion: nil)
+//        let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
+//        
+//        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//        alertController.addAction(defaultAction)
+//        
+//        let imageView = UIImageView(frame: CGRect(x: alertController.view.center.x, y: 10, width: 140, height: 140))
+//        imageView.image = finalImage
+//        
+//        alertController.view.addSubview(imageView)
+//        
+//        
+//        present(alertController, animated: true, completion: nil)
+        performSegue(withIdentifier: "addDetailsSegue", sender: self)
     }
     
     func textToImage1(text: String, image: UIImage, point: CGPoint) -> UIImage {
@@ -249,6 +250,14 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         print("preparing for segue")
+//        postinguser = dictionary["postinguser"] as? Int
+//        restaurantmentioned = dictionary["restaurantmentioned"] as? Int
+//        location = dictionary["location"] as? CLLocationCoordinate2D
+//        textreview = dictionary["textreview"] as? String
+//        rating = dictionary["rating"] as? Int
+        if segue.identifier == "addDetailsSegue" {
+            print ("ho ho ho ")
+        }
     }
 
 }
