@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cameraNavigationController.tabBarItem.image = #imageLiteral(resourceName: "take-photo")
         
         // initialize a tabbar and set the default
-        var restaurantsTabBarController = UITabBarController()
+        let restaurantsTabBarController = UITabBarController()
         
         // list all the viewControllers
         restaurantsTabBarController.viewControllers = [cameraNavigationController, diplayNavigationController]

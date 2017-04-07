@@ -59,11 +59,17 @@ class AddImageDetailViewController: UIViewController {
             "rating": rating
         ]
         
-        var currentReview = Review(dictionary: reviewDict)
+        let currentReview = Review(dictionary: reviewDict)
         uploadToParse(review: currentReview)
         
         // go to another tab
         // restaurantsTabBarController.
+        let tabBarController : UITabBarController = (self.view.window?.rootViewController as? UITabBarController)!
+        
+        dismiss(animated: false, completion: nil)
+        tabBarController.selectedIndex = 1
+        
+        
         
         
     }
