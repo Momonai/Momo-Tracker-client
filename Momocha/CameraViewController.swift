@@ -71,8 +71,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     func writeDescription(_ sender: UIPanGestureRecognizer) {
         print("tapped")
-        // display image
-        // clickedImageView.removeGestureRecognizer()
+        
         // remove all gesture recognizers
         clickedImageView.gestureRecognizers?.removeAll()
         
@@ -107,6 +106,8 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     
     func stopEditing() {
+        descriptionTextField.endEditing(true)
+        print("came to sto editing")
         clickedImageView.gestureRecognizers?.removeAll()
         // add gesture to tap to start editing
         let tap = UITapGestureRecognizer(target: self, action: #selector(writeDescription))
