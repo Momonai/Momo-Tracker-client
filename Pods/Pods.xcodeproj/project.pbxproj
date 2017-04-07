@@ -7,103 +7,180 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E1D1A81EA23548A52C3F50E32A02A52 /* SwiftyCamViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD94B353A3FC408FD1DDA00ED95410 /* SwiftyCamViewControllerDelegate.swift */; };
-		33EE6E22B3F0A1C3D57107AF80578F4B /* SwiftyCam-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6480079F16B172BC91863C932BE8D2F7 /* SwiftyCam-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6EA69DC1B329E746E537B0BCB471DDC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		7738961DA97E33E51373ED84444B3F69 /* Pods-Momocha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C12D553BB68C3FE54D116091730555CA /* Pods-Momocha-dummy.m */; };
-		8C1D0ECB8E50CAD0D82B28CB70B096F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		AB14053F59C5435E77CED7321D66179C /* SwiftyCamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1142CBED6622372D315746E5D725B1E /* SwiftyCamViewController.swift */; };
-		D9C7B5F4106E835A1A950BA18D16DFD9 /* Pods-Momocha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D02D8B46847FD79508E830550380B6 /* Pods-Momocha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE95AC944C052D4DF8B1FF7B0F55470B /* SwiftyCamButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29E40F6235AC4CFA8CF4A2109ADF7C /* SwiftyCamButton.swift */; };
-		F813C9F1DCA1CF6059041138786D5CF3 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F787EEDE14A5EFCDCC911F70F08534F /* PreviewView.swift */; };
-		F88E2D28FEA78F513EA292211540B2CE /* SwiftyCam-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F260082CD9E9D6306D7F71482C3CE01 /* SwiftyCam-dummy.m */; };
+		015C902B9C0E63DA0519A0D34E10F739 /* CosmosSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5A6DE3F46DB41715FDD549057D6BC4 /* CosmosSettings.swift */; };
+		0EC88D04EAE0CD3EFD3C3C89C1B9F45F /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB628FAFA36C24D5B02BCF59743DA992 /* CosmosLocalizedRating.swift */; };
+		1411A9FCB01090A5DBC5C2421188F86A /* SwiftyCamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC3F7F8FA6F6E54BC4EC01B8AEAC9E1 /* SwiftyCamViewController.swift */; };
+		19BFA87B4C6475A4BA437402F9EB0744 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		1C549DC4FAE4C97E3C136E54BA3136FE /* SwiftyCamButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17170918DC385D87C6EB266A9D414AA /* SwiftyCamButton.swift */; };
+		25DFA72039CBA011EBA738AA73084A8E /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD3CA3F1C57D8FD985680A1C4C3A2B /* CosmosSize.swift */; };
+		26B605E8591658E5481159BA1A602C34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		371F422D050761A63F0156F537B8902D /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA045213D948438CC7B6D66BBF8C9346 /* CosmosDefaultSettings.swift */; };
+		3DF6ECF23D38E7DA5B5B2B43707F2F4D /* Cosmos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F14A3CD71F7062082059CA333BE1E9CD /* Cosmos-dummy.m */; };
+		424AD9605CBDCD867083B9820784E0AC /* CosmosText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0749D8E35A416A47C986535B89DCFC5C /* CosmosText.swift */; };
+		45F546D14166EDEE46371951EC705C03 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CCA7AAAA7427261072894388C2F6E3 /* CosmosView.swift */; };
+		4F40A9CBB316E7100828F0C6F5714946 /* CosmosTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1524EAF85DABE9B4AC98076E9B471 /* CosmosTouch.swift */; };
+		5B70CACB37AEE3575EA6647373758F48 /* SwiftyCamViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C9C3A30C898FEF219730C95E31BC54 /* SwiftyCamViewControllerDelegate.swift */; };
+		7CC5A43D7E1372EB6292FCBC0151A36E /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC45836C883B6C48C27668A8378759 /* CosmosAccessibility.swift */; };
+		88BA9FFC474BD7B995A0CEA06FF431F7 /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272AE0D2FF22623E46F9E729AFDDC67 /* StarFillMode.swift */; };
+		99F08F6FE2B165EEBD5E01EDDA176620 /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF9761CECE8656A31092120079A62 /* CosmosRating.swift */; };
+		9E2D21C49D7774E9D95B01D99A2557FD /* SwiftyCam-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA76227ACB36EC96A815767E5FA5BCDB /* SwiftyCam-dummy.m */; };
+		AA971D9492DD9B9E288045C2C0CC9A99 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C2F3747B02CAA1DD9C6A4A41ACAE01 /* CosmosLayers.swift */; };
+		AFA89B109DD6EA34ECA5C75D23FE9678 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73881F140DC9D7A2DB901FAEBD00E38 /* PreviewView.swift */; };
+		C79D2F2FCE3EF9B31D1222E0C4A59DC5 /* RightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D269570C9DCBE6399E26CDF3F4F3528 /* RightToLeft.swift */; };
+		C95B658D689425ED9DAA95EB479B44A6 /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3765189177DC6F7B39792C4598888B7 /* StarLayer.swift */; };
+		CC0847C79B3EFF0BA04CEA2BE3E138D6 /* SwiftyCam-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 20A5F7849C05DFB135AE4373C05D2679 /* SwiftyCam-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D455729B00FEAFE7EE2D0FEFD1DB5F75 /* Pods-Momocha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C12D553BB68C3FE54D116091730555CA /* Pods-Momocha-dummy.m */; };
+		DE5E91A47C1BF6869DF17747D61C2FF1 /* Cosmos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 753110054CC2D5E7251D167052029743 /* Cosmos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E24E6FD49840A5ED4C1882803D23F096 /* Pods-Momocha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D02D8B46847FD79508E830550380B6 /* Pods-Momocha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2D8D1AA0D41C73C4B570DE682C05D72 /* CosmosTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C5A870CBEB12DD1319D24845EF941 /* CosmosTouchTarget.swift */; };
+		F37DDDC2660EB17E1BE35429C1C58AD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		F66DE3EF01408C42C115587B201CB541 /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44AA242FC1C9ED695A0D1B86D4372F /* CosmosLayerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		00E14550C8ED783520EECBCD1F886F7C /* PBXContainerItemProxy */ = {
+		519722127F50561AE4CA1626A4E29246 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 62CFEB3B637912CB635DCC608AA43402;
+			remoteGlobalIDString = 6EBAB41EA25FC765DB69ABC79DCB7E86;
 			remoteInfo = SwiftyCam;
+		};
+		AC9CAF8E2D75C7F6458B583EFF8F9D32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FDC533A4360A68ABDCE852F04B30927;
+			remoteInfo = Cosmos;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00C9C3A30C898FEF219730C95E31BC54 /* SwiftyCamViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewControllerDelegate.swift; path = Source/SwiftyCamViewControllerDelegate.swift; sourceTree = "<group>"; };
+		02FD6AAB57D997D94D3AB5F9ABB68A24 /* Cosmos.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.xcconfig; sourceTree = "<group>"; };
+		0749D8E35A416A47C986535B89DCFC5C /* CosmosText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosText.swift; path = Cosmos/CosmosText.swift; sourceTree = "<group>"; };
+		0DC3F7F8FA6F6E54BC4EC01B8AEAC9E1 /* SwiftyCamViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewController.swift; path = Source/SwiftyCamViewController.swift; sourceTree = "<group>"; };
+		0F5A6DE3F46DB41715FDD549057D6BC4 /* CosmosSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSettings.swift; path = Cosmos/CosmosSettings.swift; sourceTree = "<group>"; };
+		19707498E7626C50F5C5245B358E7402 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cosmos.framework; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20A5F7849C05DFB135AE4373C05D2679 /* SwiftyCam-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCam-umbrella.h"; sourceTree = "<group>"; };
 		23B79331C5F7DF10F38EA0FD09CF0DEF /* Pods-Momocha-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Momocha-frameworks.sh"; sourceTree = "<group>"; };
-		3F260082CD9E9D6306D7F71482C3CE01 /* SwiftyCam-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyCam-dummy.m"; sourceTree = "<group>"; };
-		4A11E64F959EAA086856E03B6D50FB92 /* SwiftyCam.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyCam.xcconfig; sourceTree = "<group>"; };
+		286C5A870CBEB12DD1319D24845EF941 /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouchTarget.swift; path = Cosmos/Helpers/CosmosTouchTarget.swift; sourceTree = "<group>"; };
+		29AA329321450338B0EBE409C7A8B47B /* SwiftyCam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCam.framework; path = SwiftyCam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFC45836C883B6C48C27668A8378759 /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
+		4EED0091BEC7B2775F4F3C72E59A25A3 /* SwiftyCam-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCam-prefix.pch"; sourceTree = "<group>"; };
 		5087799F124DF70FA22DCF5B648F0214 /* Pods-Momocha.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Momocha.modulemap"; sourceTree = "<group>"; };
-		6480079F16B172BC91863C932BE8D2F7 /* SwiftyCam-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCam-umbrella.h"; sourceTree = "<group>"; };
-		66493B70D81C345059856D85C0FBEBE3 /* SwiftyCam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCam.framework; path = SwiftyCam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B1A3F4DB5FBFABAF5C70AF5B6B0D04C /* SwiftyCam.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyCam.modulemap; sourceTree = "<group>"; };
-		7E29E40F6235AC4CFA8CF4A2109ADF7C /* SwiftyCamButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCamButton.swift; path = Source/SwiftyCamButton.swift; sourceTree = "<group>"; };
+		52E1524EAF85DABE9B4AC98076E9B471 /* CosmosTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouch.swift; path = Cosmos/CosmosTouch.swift; sourceTree = "<group>"; };
+		5B8D4E4399846421D7BDE1F9ADA84040 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E44AA242FC1C9ED695A0D1B86D4372F /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayerHelper.swift; path = Cosmos/CosmosLayerHelper.swift; sourceTree = "<group>"; };
+		753110054CC2D5E7251D167052029743 /* Cosmos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-umbrella.h"; sourceTree = "<group>"; };
 		86BDDE86F4BA1041AAE748F976061761 /* Pods-Momocha-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Momocha-acknowledgements.plist"; sourceTree = "<group>"; };
-		8A580282FE8C6ACB0CF326D55341D67B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F787EEDE14A5EFCDCC911F70F08534F /* PreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = Source/PreviewView.swift; sourceTree = "<group>"; };
+		88854C366C4E9613BF07ED0D927B03AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		998FA33CC6576B4549C678ABF154832C /* Pods-Momocha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Momocha.debug.xcconfig"; sourceTree = "<group>"; };
-		99CD94B353A3FC408FD1DDA00ED95410 /* SwiftyCamViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewControllerDelegate.swift; path = Source/SwiftyCamViewControllerDelegate.swift; sourceTree = "<group>"; };
+		9D269570C9DCBE6399E26CDF3F4F3528 /* RightToLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RightToLeft.swift; path = Cosmos/Helpers/RightToLeft.swift; sourceTree = "<group>"; };
 		9D8D964051B096921F929889D746D04F /* Pods-Momocha-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Momocha-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A3666060CCBF5CE024C4F569662BD6A8 /* Pods-Momocha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Momocha.release.xcconfig"; sourceTree = "<group>"; };
+		A49C3EF66D213CB734E002536BFC72A1 /* SwiftyCam.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyCam.modulemap; sourceTree = "<group>"; };
+		A6BD3CA3F1C57D8FD985680A1C4C3A2B /* CosmosSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSize.swift; path = Cosmos/CosmosSize.swift; sourceTree = "<group>"; };
 		A77492B2131BF4ADE0AC31CF51233F98 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1142CBED6622372D315746E5D725B1E /* SwiftyCamViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewController.swift; path = Source/SwiftyCamViewController.swift; sourceTree = "<group>"; };
-		B2CE3DC3C379CA2D649EF17291B506A6 /* SwiftyCam-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCam-prefix.pch"; sourceTree = "<group>"; };
+		AA3189763319DD03BD96009607701D8B /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Cosmos.modulemap; sourceTree = "<group>"; };
 		B3D02D8B46847FD79508E830550380B6 /* Pods-Momocha-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Momocha-umbrella.h"; sourceTree = "<group>"; };
+		BA045213D948438CC7B6D66BBF8C9346 /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosDefaultSettings.swift; path = Cosmos/CosmosDefaultSettings.swift; sourceTree = "<group>"; };
 		C12D553BB68C3FE54D116091730555CA /* Pods-Momocha-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Momocha-dummy.m"; sourceTree = "<group>"; };
+		C1CCA7AAAA7427261072894388C2F6E3 /* CosmosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosView.swift; path = Cosmos/CosmosView.swift; sourceTree = "<group>"; };
+		C3765189177DC6F7B39792C4598888B7 /* StarLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarLayer.swift; path = Cosmos/StarLayer.swift; sourceTree = "<group>"; };
+		C6C2F3747B02CAA1DD9C6A4A41ACAE01 /* CosmosLayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayers.swift; path = Cosmos/CosmosLayers.swift; sourceTree = "<group>"; };
+		C8ACF9761CECE8656A31092120079A62 /* CosmosRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosRating.swift; path = Cosmos/CosmosRating.swift; sourceTree = "<group>"; };
+		CA76227ACB36EC96A815767E5FA5BCDB /* SwiftyCam-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyCam-dummy.m"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D272AE0D2FF22623E46F9E729AFDDC67 /* StarFillMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarFillMode.swift; path = Cosmos/StarFillMode.swift; sourceTree = "<group>"; };
+		E212725DC631621C67A3FFAF3C6B66CC /* Cosmos-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-prefix.pch"; sourceTree = "<group>"; };
+		E73881F140DC9D7A2DB901FAEBD00E38 /* PreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = Source/PreviewView.swift; sourceTree = "<group>"; };
+		EB628FAFA36C24D5B02BCF59743DA992 /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLocalizedRating.swift; path = Cosmos/CosmosLocalizedRating.swift; sourceTree = "<group>"; };
+		EB6DA3444B93FF3769AD25DE3D5847C9 /* SwiftyCam.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyCam.xcconfig; sourceTree = "<group>"; };
 		EC441AD448A89A7318C34514F296C43C /* Pods-Momocha-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Momocha-resources.sh"; sourceTree = "<group>"; };
-		F36E74DD07A0DED1EAAA70BEBD604ED0 /* Pods_Momocha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Momocha.framework; path = "Pods-Momocha.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6A10C78BC92AA2F311627941B6E77E /* Pods_Momocha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Momocha.framework; path = "Pods-Momocha.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14A3CD71F7062082059CA333BE1E9CD /* Cosmos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cosmos-dummy.m"; sourceTree = "<group>"; };
+		F17170918DC385D87C6EB266A9D414AA /* SwiftyCamButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCamButton.swift; path = Source/SwiftyCamButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0071776BBA410602DE7A353DA52529E4 /* Frameworks */ = {
+		23E1D2C8911A1F4127AF93A478D985B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EA69DC1B329E746E537B0BCB471DDC1 /* Foundation.framework in Frameworks */,
+				F37DDDC2660EB17E1BE35429C1C58AD4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADEB07439C4B69F71DE0FD47649FBF8D /* Frameworks */ = {
+		CB3B142259C1AA3E53610AF6E50C3B96 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C1D0ECB8E50CAD0D82B28CB70B096F3 /* Foundation.framework in Frameworks */,
+				26B605E8591658E5481159BA1A602C34 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE666283A08DD79E044974FE646B6D33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19BFA87B4C6475A4BA437402F9EB0744 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0AAB137789309075370324EFADEA4FFD /* SwiftyCam */ = {
+		03B522B3A15A0A51BCA32D7EEAF8DB36 /* Cosmos */ = {
 			isa = PBXGroup;
 			children = (
-				8F787EEDE14A5EFCDCC911F70F08534F /* PreviewView.swift */,
-				7E29E40F6235AC4CFA8CF4A2109ADF7C /* SwiftyCamButton.swift */,
-				B1142CBED6622372D315746E5D725B1E /* SwiftyCamViewController.swift */,
-				99CD94B353A3FC408FD1DDA00ED95410 /* SwiftyCamViewControllerDelegate.swift */,
-				83574DFCF9BBF7F96E7560A429B5EF23 /* Support Files */,
+				2BFC45836C883B6C48C27668A8378759 /* CosmosAccessibility.swift */,
+				BA045213D948438CC7B6D66BBF8C9346 /* CosmosDefaultSettings.swift */,
+				5E44AA242FC1C9ED695A0D1B86D4372F /* CosmosLayerHelper.swift */,
+				C6C2F3747B02CAA1DD9C6A4A41ACAE01 /* CosmosLayers.swift */,
+				EB628FAFA36C24D5B02BCF59743DA992 /* CosmosLocalizedRating.swift */,
+				C8ACF9761CECE8656A31092120079A62 /* CosmosRating.swift */,
+				0F5A6DE3F46DB41715FDD549057D6BC4 /* CosmosSettings.swift */,
+				A6BD3CA3F1C57D8FD985680A1C4C3A2B /* CosmosSize.swift */,
+				0749D8E35A416A47C986535B89DCFC5C /* CosmosText.swift */,
+				52E1524EAF85DABE9B4AC98076E9B471 /* CosmosTouch.swift */,
+				286C5A870CBEB12DD1319D24845EF941 /* CosmosTouchTarget.swift */,
+				C1CCA7AAAA7427261072894388C2F6E3 /* CosmosView.swift */,
+				9D269570C9DCBE6399E26CDF3F4F3528 /* RightToLeft.swift */,
+				D272AE0D2FF22623E46F9E729AFDDC67 /* StarFillMode.swift */,
+				C3765189177DC6F7B39792C4598888B7 /* StarLayer.swift */,
+				69599B875B10D6489467F34961988D80 /* Support Files */,
 			);
-			name = SwiftyCam;
-			path = SwiftyCam;
+			name = Cosmos;
+			path = Cosmos;
 			sourceTree = "<group>";
 		};
-		0B908D219F50293D5D6C12BD5B2B02E5 /* Pods */ = {
+		30F13F8582DC2A30A376806DD2095D52 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0AAB137789309075370324EFADEA4FFD /* SwiftyCam */,
+				88854C366C4E9613BF07ED0D927B03AE /* Info.plist */,
+				A49C3EF66D213CB734E002536BFC72A1 /* SwiftyCam.modulemap */,
+				EB6DA3444B93FF3769AD25DE3D5847C9 /* SwiftyCam.xcconfig */,
+				CA76227ACB36EC96A815767E5FA5BCDB /* SwiftyCam-dummy.m */,
+				4EED0091BEC7B2775F4F3C72E59A25A3 /* SwiftyCam-prefix.pch */,
+				20A5F7849C05DFB135AE4373C05D2679 /* SwiftyCam-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyCam";
 			sourceTree = "<group>";
 		};
-		62F8C11F5C2F764AE47002F21694304F /* Products */ = {
+		69599B875B10D6489467F34961988D80 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F36E74DD07A0DED1EAAA70BEBD604ED0 /* Pods_Momocha.framework */,
-				66493B70D81C345059856D85C0FBEBE3 /* SwiftyCam.framework */,
+				AA3189763319DD03BD96009607701D8B /* Cosmos.modulemap */,
+				02FD6AAB57D997D94D3AB5F9ABB68A24 /* Cosmos.xcconfig */,
+				F14A3CD71F7062082059CA333BE1E9CD /* Cosmos-dummy.m */,
+				E212725DC631621C67A3FFAF3C6B66CC /* Cosmos-prefix.pch */,
+				753110054CC2D5E7251D167052029743 /* Cosmos-umbrella.h */,
+				5B8D4E4399846421D7BDE1F9ADA84040 /* Info.plist */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/Cosmos";
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -114,13 +191,26 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		79884A425D9197150D44036057E52B0E /* SwiftyCam */ = {
+			isa = PBXGroup;
+			children = (
+				E73881F140DC9D7A2DB901FAEBD00E38 /* PreviewView.swift */,
+				F17170918DC385D87C6EB266A9D414AA /* SwiftyCamButton.swift */,
+				0DC3F7F8FA6F6E54BC4EC01B8AEAC9E1 /* SwiftyCamViewController.swift */,
+				00C9C3A30C898FEF219730C95E31BC54 /* SwiftyCamViewControllerDelegate.swift */,
+				30F13F8582DC2A30A376806DD2095D52 /* Support Files */,
+			);
+			name = SwiftyCam;
+			path = SwiftyCam;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				0B908D219F50293D5D6C12BD5B2B02E5 /* Pods */,
-				62F8C11F5C2F764AE47002F21694304F /* Products */,
+				F67C9D85F9A53F1B900F8F0A4B7E32C6 /* Pods */,
+				BE797102F1F159A4868B0B5C4ABE2350 /* Products */,
 				ECCE020E71253893071AA87E06067C44 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -143,26 +233,22 @@
 			path = "Target Support Files/Pods-Momocha";
 			sourceTree = "<group>";
 		};
-		83574DFCF9BBF7F96E7560A429B5EF23 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8A580282FE8C6ACB0CF326D55341D67B /* Info.plist */,
-				7B1A3F4DB5FBFABAF5C70AF5B6B0D04C /* SwiftyCam.modulemap */,
-				4A11E64F959EAA086856E03B6D50FB92 /* SwiftyCam.xcconfig */,
-				3F260082CD9E9D6306D7F71482C3CE01 /* SwiftyCam-dummy.m */,
-				B2CE3DC3C379CA2D649EF17291B506A6 /* SwiftyCam-prefix.pch */,
-				6480079F16B172BC91863C932BE8D2F7 /* SwiftyCam-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyCam";
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE797102F1F159A4868B0B5C4ABE2350 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19707498E7626C50F5C5245B358E7402 /* Cosmos.framework */,
+				ED6A10C78BC92AA2F311627941B6E77E /* Pods_Momocha.framework */,
+				29AA329321450338B0EBE409C7A8B47B /* SwiftyCam.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		ECCE020E71253893071AA87E06067C44 /* Targets Support Files */ = {
@@ -173,53 +259,88 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		F67C9D85F9A53F1B900F8F0A4B7E32C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				03B522B3A15A0A51BCA32D7EEAF8DB36 /* Cosmos */,
+				79884A425D9197150D44036057E52B0E /* SwiftyCam */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		E7830789278A15E5678BB896207A95AF /* Headers */ = {
+		6291C33A337B6448615608998A4D7AD7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33EE6E22B3F0A1C3D57107AF80578F4B /* SwiftyCam-umbrella.h in Headers */,
+				CC0847C79B3EFF0BA04CEA2BE3E138D6 /* SwiftyCam-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5374C9F53F86B070D588055256D4EA0 /* Headers */ = {
+		79878EEEADD6EA5321B2463255C21C62 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9C7B5F4106E835A1A950BA18D16DFD9 /* Pods-Momocha-umbrella.h in Headers */,
+				E24E6FD49840A5ED4C1882803D23F096 /* Pods-Momocha-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7F72A88918035AFA923560A84B87C61 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE5E91A47C1BF6869DF17747D61C2FF1 /* Cosmos-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		423884AF7C8FC0612FA2B324F48D6C41 /* Pods-Momocha */ = {
+		180564727E6571CFFCC8D2E048C2963D /* Pods-Momocha */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBD3C75AC2A851095C23F0D76C3D283F /* Build configuration list for PBXNativeTarget "Pods-Momocha" */;
+			buildConfigurationList = CA75DE9DA8A12350D09B849AA3271D46 /* Build configuration list for PBXNativeTarget "Pods-Momocha" */;
 			buildPhases = (
-				A70E40B8C934480AE7073D89E001B0FC /* Sources */,
-				ADEB07439C4B69F71DE0FD47649FBF8D /* Frameworks */,
-				F5374C9F53F86B070D588055256D4EA0 /* Headers */,
+				FFCF8B97599842BDE5CEF637077DCE2F /* Sources */,
+				CB3B142259C1AA3E53610AF6E50C3B96 /* Frameworks */,
+				79878EEEADD6EA5321B2463255C21C62 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8038513412A50A64745B6F49E440E008 /* PBXTargetDependency */,
+				23CA2BC3A130992A73C100E069245D3B /* PBXTargetDependency */,
+				D3CDE40EFCF5714C4324478B87E6FC8E /* PBXTargetDependency */,
 			);
 			name = "Pods-Momocha";
 			productName = "Pods-Momocha";
-			productReference = F36E74DD07A0DED1EAAA70BEBD604ED0 /* Pods_Momocha.framework */;
+			productReference = ED6A10C78BC92AA2F311627941B6E77E /* Pods_Momocha.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		62CFEB3B637912CB635DCC608AA43402 /* SwiftyCam */ = {
+		4FDC533A4360A68ABDCE852F04B30927 /* Cosmos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 820D881515495241D2209BA9D81676AA /* Build configuration list for PBXNativeTarget "SwiftyCam" */;
+			buildConfigurationList = 38CA41A3E689F135BAEECE91B63D9EA0 /* Build configuration list for PBXNativeTarget "Cosmos" */;
 			buildPhases = (
-				BFEA37F5AC3F493E0A610FC4AEEA5FF9 /* Sources */,
-				0071776BBA410602DE7A353DA52529E4 /* Frameworks */,
-				E7830789278A15E5678BB896207A95AF /* Headers */,
+				64A8AA816E108F31E7CEE1A683E42839 /* Sources */,
+				23E1D2C8911A1F4127AF93A478D985B5 /* Frameworks */,
+				B7F72A88918035AFA923560A84B87C61 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cosmos;
+			productName = Cosmos;
+			productReference = 19707498E7626C50F5C5245B358E7402 /* Cosmos.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6EBAB41EA25FC765DB69ABC79DCB7E86 /* SwiftyCam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE5A5ACFD6E6BFC1A3D6C2B1BE2B1368 /* Build configuration list for PBXNativeTarget "SwiftyCam" */;
+			buildPhases = (
+				B2BBBA1B3022723E3D60E030BB619B33 /* Sources */,
+				DE666283A08DD79E044974FE646B6D33 /* Frameworks */,
+				6291C33A337B6448615608998A4D7AD7 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -227,7 +348,7 @@
 			);
 			name = SwiftyCam;
 			productName = SwiftyCam;
-			productReference = 66493B70D81C345059856D85C0FBEBE3 /* SwiftyCam.framework */;
+			productReference = 29AA329321450338B0EBE409C7A8B47B /* SwiftyCam.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -247,85 +368,80 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 62F8C11F5C2F764AE47002F21694304F /* Products */;
+			productRefGroup = BE797102F1F159A4868B0B5C4ABE2350 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				423884AF7C8FC0612FA2B324F48D6C41 /* Pods-Momocha */,
-				62CFEB3B637912CB635DCC608AA43402 /* SwiftyCam */,
+				4FDC533A4360A68ABDCE852F04B30927 /* Cosmos */,
+				180564727E6571CFFCC8D2E048C2963D /* Pods-Momocha */,
+				6EBAB41EA25FC765DB69ABC79DCB7E86 /* SwiftyCam */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A70E40B8C934480AE7073D89E001B0FC /* Sources */ = {
+		64A8AA816E108F31E7CEE1A683E42839 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7738961DA97E33E51373ED84444B3F69 /* Pods-Momocha-dummy.m in Sources */,
+				3DF6ECF23D38E7DA5B5B2B43707F2F4D /* Cosmos-dummy.m in Sources */,
+				7CC5A43D7E1372EB6292FCBC0151A36E /* CosmosAccessibility.swift in Sources */,
+				371F422D050761A63F0156F537B8902D /* CosmosDefaultSettings.swift in Sources */,
+				F66DE3EF01408C42C115587B201CB541 /* CosmosLayerHelper.swift in Sources */,
+				AA971D9492DD9B9E288045C2C0CC9A99 /* CosmosLayers.swift in Sources */,
+				0EC88D04EAE0CD3EFD3C3C89C1B9F45F /* CosmosLocalizedRating.swift in Sources */,
+				99F08F6FE2B165EEBD5E01EDDA176620 /* CosmosRating.swift in Sources */,
+				015C902B9C0E63DA0519A0D34E10F739 /* CosmosSettings.swift in Sources */,
+				25DFA72039CBA011EBA738AA73084A8E /* CosmosSize.swift in Sources */,
+				424AD9605CBDCD867083B9820784E0AC /* CosmosText.swift in Sources */,
+				4F40A9CBB316E7100828F0C6F5714946 /* CosmosTouch.swift in Sources */,
+				E2D8D1AA0D41C73C4B570DE682C05D72 /* CosmosTouchTarget.swift in Sources */,
+				45F546D14166EDEE46371951EC705C03 /* CosmosView.swift in Sources */,
+				C79D2F2FCE3EF9B31D1222E0C4A59DC5 /* RightToLeft.swift in Sources */,
+				88BA9FFC474BD7B995A0CEA06FF431F7 /* StarFillMode.swift in Sources */,
+				C95B658D689425ED9DAA95EB479B44A6 /* StarLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFEA37F5AC3F493E0A610FC4AEEA5FF9 /* Sources */ = {
+		B2BBBA1B3022723E3D60E030BB619B33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F813C9F1DCA1CF6059041138786D5CF3 /* PreviewView.swift in Sources */,
-				F88E2D28FEA78F513EA292211540B2CE /* SwiftyCam-dummy.m in Sources */,
-				DE95AC944C052D4DF8B1FF7B0F55470B /* SwiftyCamButton.swift in Sources */,
-				AB14053F59C5435E77CED7321D66179C /* SwiftyCamViewController.swift in Sources */,
-				0E1D1A81EA23548A52C3F50E32A02A52 /* SwiftyCamViewControllerDelegate.swift in Sources */,
+				AFA89B109DD6EA34ECA5C75D23FE9678 /* PreviewView.swift in Sources */,
+				9E2D21C49D7774E9D95B01D99A2557FD /* SwiftyCam-dummy.m in Sources */,
+				1C549DC4FAE4C97E3C136E54BA3136FE /* SwiftyCamButton.swift in Sources */,
+				1411A9FCB01090A5DBC5C2421188F86A /* SwiftyCamViewController.swift in Sources */,
+				5B70CACB37AEE3575EA6647373758F48 /* SwiftyCamViewControllerDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFCF8B97599842BDE5CEF637077DCE2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D455729B00FEAFE7EE2D0FEFD1DB5F75 /* Pods-Momocha-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8038513412A50A64745B6F49E440E008 /* PBXTargetDependency */ = {
+		23CA2BC3A130992A73C100E069245D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cosmos;
+			target = 4FDC533A4360A68ABDCE852F04B30927 /* Cosmos */;
+			targetProxy = AC9CAF8E2D75C7F6458B583EFF8F9D32 /* PBXContainerItemProxy */;
+		};
+		D3CDE40EFCF5714C4324478B87E6FC8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyCam;
-			target = 62CFEB3B637912CB635DCC608AA43402 /* SwiftyCam */;
-			targetProxy = 00E14550C8ED783520EECBCD1F886F7C /* PBXContainerItemProxy */;
+			target = 6EBAB41EA25FC765DB69ABC79DCB7E86 /* SwiftyCam */;
+			targetProxy = 519722127F50561AE4CA1626A4E29246 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B2DFA1F38E4CDCB618FE958E0061FB3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3666060CCBF5CE024C4F569662BD6A8 /* Pods-Momocha.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Momocha/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Momocha/Pods-Momocha.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Momocha;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1F3FE1BF9D2A3F833947532278FB7749 /* Debug */ = {
+		31182CDD2FBAFAE3AA3AB73012C58957 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 998FA33CC6576B4549C678ABF154832C /* Pods-Momocha.debug.xcconfig */;
 			buildSettings = {
@@ -360,38 +476,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		5B1B31DF01F4B7F2FD3058A59B78E7D7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A11E64F959EAA086856E03B6D50FB92 /* SwiftyCam.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyCam/SwiftyCam-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyCam/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyCam/SwiftyCam.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftyCam;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		673254EEAF0B5BF4596080C749645884 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -433,9 +517,108 @@
 			};
 			name = Release;
 		};
-		8537796C8F9E309B5016D2E0889947CA /* Debug */ = {
+		94727DA1DAA21FC305ADD8A970ACD6CC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A11E64F959EAA086856E03B6D50FB92 /* SwiftyCam.xcconfig */;
+			baseConfigurationReference = A3666060CCBF5CE024C4F569662BD6A8 /* Pods-Momocha.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Momocha/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Momocha/Pods-Momocha.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Momocha;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AF8B010B4F74794572F550365DED4E73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB6DA3444B93FF3769AD25DE3D5847C9 /* SwiftyCam.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyCam/SwiftyCam-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyCam/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyCam/SwiftyCam.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyCam;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D328BF5AC7A27E80E5214F7E51F21B4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02FD6AAB57D997D94D3AB5F9ABB68A24 /* Cosmos.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cosmos/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Cosmos;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DA14616360D3DC70F74C9D31A17C1EF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB6DA3444B93FF3769AD25DE3D5847C9 /* SwiftyCam.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -510,6 +693,39 @@
 			};
 			name = Debug;
 		};
+		E8FFBAAF3F155FD16002C12A1DC0EF0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02FD6AAB57D997D94D3AB5F9ABB68A24 /* Cosmos.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cosmos/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Cosmos;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -522,20 +738,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		820D881515495241D2209BA9D81676AA /* Build configuration list for PBXNativeTarget "SwiftyCam" */ = {
+		38CA41A3E689F135BAEECE91B63D9EA0 /* Build configuration list for PBXNativeTarget "Cosmos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8537796C8F9E309B5016D2E0889947CA /* Debug */,
-				5B1B31DF01F4B7F2FD3058A59B78E7D7 /* Release */,
+				E8FFBAAF3F155FD16002C12A1DC0EF0E /* Debug */,
+				D328BF5AC7A27E80E5214F7E51F21B4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBD3C75AC2A851095C23F0D76C3D283F /* Build configuration list for PBXNativeTarget "Pods-Momocha" */ = {
+		CA75DE9DA8A12350D09B849AA3271D46 /* Build configuration list for PBXNativeTarget "Pods-Momocha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1F3FE1BF9D2A3F833947532278FB7749 /* Debug */,
-				0B2DFA1F38E4CDCB618FE958E0061FB3 /* Release */,
+				31182CDD2FBAFAE3AA3AB73012C58957 /* Debug */,
+				94727DA1DAA21FC305ADD8A970ACD6CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE5A5ACFD6E6BFC1A3D6C2B1BE2B1368 /* Build configuration list for PBXNativeTarget "SwiftyCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA14616360D3DC70F74C9D31A17C1EF6 /* Debug */,
+				AF8B010B4F74794572F550365DED4E73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,5 +7,6 @@ target 'Momocha' do
 
   # Pods for Momocha
   pod "SwiftyCam"
+  pod "Cosmos"
 
 end

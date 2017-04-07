@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Cosmos.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Momocha.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>423884AF7C8FC0612FA2B324F48D6C41</key>
+		<key>180564727E6571CFFCC8D2E048C2963D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62CFEB3B637912CB635DCC608AA43402</key>
+		<key>4FDC533A4360A68ABDCE852F04B30927</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6EBAB41EA25FC765DB69ABC79DCB7E86</key>
 		<dict>
 			<key>primary</key>
 			<true/>

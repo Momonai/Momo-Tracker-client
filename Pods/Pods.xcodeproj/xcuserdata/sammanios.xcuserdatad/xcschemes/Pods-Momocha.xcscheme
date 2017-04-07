@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "423884AF7C8FC0612FA2B324F48D6C41"
+               BlueprintIdentifier = "180564727E6571CFFCC8D2E048C2963D"
                BuildableName = "Pods_Momocha.framework"
                BlueprintName = "Pods-Momocha"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "423884AF7C8FC0612FA2B324F48D6C41"
+            BlueprintIdentifier = "180564727E6571CFFCC8D2E048C2963D"
             BuildableName = "Pods_Momocha.framework"
             BlueprintName = "Pods-Momocha"
             ReferencedContainer = "container:Pods.xcodeproj">
