@@ -81,6 +81,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
 
         
         descriptionTextField = UITextField(frame: CGRect(x: 0, y: (self.view.frame.height) / 2, width: self.view.frame.width, height: 40))
+        descriptionTextField.textColor = UIColor.white
         textViewCenter = CGPoint(x: descriptionTextField.center.x , y: descriptionTextField.center.y)
         
         descriptionTextField.backgroundColor = UIColor.gray
@@ -138,7 +139,8 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         if descriptionTextField.text == "" {
             finalImage = clickedImageView.image!
         } else {
-            finalImage = textToImage(drawText: descriptionTextField.text! as NSString, inImage: clickedImageView.image!, atPoint: textViewCenter)
+            // finalImage = textToImage(drawText: descriptionTextField.text! as NSString, inImage: clickedImageView.image!, atPoint: textViewCenter)
+            finalImage = textToImage1(text: descriptionTextField.text!, image: clickedImageView.image!, point: textViewCenter)
         }
         
         let alertController = UIAlertController(title: "Hey AppCoda", message: "What do you want to do?", preferredStyle: .alert)
@@ -155,7 +157,26 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         present(alertController, animated: true, completion: nil)
     }
     
-    
+    func textToImage1(text: String, image: UIImage, point: CGPoint) -> UIImage {
+        
+        let imageView = UIImageView(image: image)
+        imageView.backgroundColor = UIColor.clear
+        imageView.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        
+        let label = UILabel(frame: CGRect(x: point.x, y: point.y, width: image.size.width, height: image.size.height))
+        label.backgroundColor = UIColor.clear
+        label.textAlignment = .center
+        label.textColor = UIColor.white
+        label.text = text
+        
+        UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0);
+        imageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        label.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let imageWithText = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext();
+        
+        return imageWithText!
+    }
     
     func textToImage(drawText text: NSString, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
         let textColor = UIColor.white
