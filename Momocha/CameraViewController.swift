@@ -70,8 +70,8 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         // display image
         
         let descriptionTextField = UITextField(frame: CGRect(x: 0, y: (self.view.frame.height) / 2, width: self.view.frame.width, height: 40))
-        descriptionTextField.placeholder = "Enter TExt HERE"
-        descriptionTextField.backgroundColor = .red
+        descriptionTextField.backgroundColor = UIColor.gray
+        descriptionTextField.becomeFirstResponder()
         self.view.addSubview(descriptionTextField)
         
 //        let stepsTextField = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
