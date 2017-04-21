@@ -43,9 +43,9 @@ class Parse: NSObject {
     // TODO: IMPLEMENT THIS
     class func uploadToParse(review: Review) {
         // upload the dicctionary review to parse.. the definition of Review is in the models directory
-        print("This is the review of the restaurant\(review.textreview)")
-        print("This is the rating of the restaurant\(review.rating)")
-        print("This is the location of the restaurant\(review.location)")
+        print("This is the review of the restaurant\(String(describing: review.textreview))")
+        print("This is the rating of the restaurant\(String(describing: review.rating))")
+        print("This is the location of the restaurant\(String(describing: review.location))")
     }
 
 }

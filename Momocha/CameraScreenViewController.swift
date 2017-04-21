@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyCam
 import AVFoundation
 
 class CameraScreenViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate  {
@@ -33,7 +32,7 @@ class CameraScreenViewController: UIViewController, AVCaptureVideoDataOutputSamp
     
     var shouldTakePhoto:Bool = false
     
-    var stillImageOutput: AVCaptureStillImageOutput = AVCaptureStillImageOutput()
+    var stillImageOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +56,7 @@ class CameraScreenViewController: UIViewController, AVCaptureVideoDataOutputSamp
         
         if let availableDevices = AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: .back).devices {
             captureDevice = availableDevices.first
-            
-            print("capture device used: \(captureDevice)")
-            
+                        
             beginSession()
             addButtons()
 
@@ -148,7 +145,7 @@ func addButtons() {
                 DispatchQueue.main.async {
                     self.imageView.image = image
                     self.photoButton.isUserInteractionEnabled = false
-                    let crss = UIImage(named: "cross")
+                    _ = UIImage(named: "cross")
                     
                     let crossButtonWidth:CGFloat = 65.0
                     self.crossButton = UIImageView(frame: CGRect(x: self.view.frame.midX - crossButtonWidth / 2, y: self.view.frame.height - crossButtonWidth - 20, width: crossButtonWidth, height: crossButtonWidth))

@@ -22,6 +22,8 @@
 		5E7F61B51E96C8D700226177 /* MomoUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B41E96C8D700226177 /* MomoUsers.swift */; };
 		5E7F61B71E96D0BD00226177 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B61E96D0BD00226177 /* Review.swift */; };
 		5E7F61BA1E96DF4300226177 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B91E96DF4300226177 /* Parse.swift */; };
+		5EC547491EA9BD9E00EC9F75 /* ExperimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC547481EA9BD9E00EC9F75 /* ExperimentViewController.swift */; };
+		5EC5474B1EA9C52C00EC9F75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5474A1EA9C52C00EC9F75 /* LoginViewController.swift */; };
 		5EC63C1D1E970BEB005D91F0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC63C1C1E970BEB005D91F0 /* CameraViewController.swift */; };
 		5EC63C1F1E97114A005D91F0 /* AddImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC63C1E1E97114A005D91F0 /* AddImageDetailViewController.swift */; };
 		5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED399C61E67B68A005BE061 /* AppDelegate.swift */; };
@@ -46,6 +48,8 @@
 		5E7F61B41E96C8D700226177 /* MomoUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomoUsers.swift; sourceTree = "<group>"; };
 		5E7F61B61E96D0BD00226177 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		5E7F61B91E96DF4300226177 /* Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
+		5EC547481EA9BD9E00EC9F75 /* ExperimentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentViewController.swift; sourceTree = "<group>"; };
+		5EC5474A1EA9C52C00EC9F75 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5EC63C1C1E970BEB005D91F0 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5EC63C1E1E97114A005D91F0 /* AddImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageDetailViewController.swift; sourceTree = "<group>"; };
 		5ED399C31E67B68A005BE061 /* Momocha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momocha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +96,8 @@
 				5E7F61A81E96811800226177 /* MainNavigationViewController.swift */,
 				5EC63C1C1E970BEB005D91F0 /* CameraViewController.swift */,
 				5EC63C1E1E97114A005D91F0 /* AddImageDetailViewController.swift */,
+				5EC547481EA9BD9E00EC9F75 /* ExperimentViewController.swift */,
+				5EC5474A1EA9C52C00EC9F75 /* LoginViewController.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -269,7 +275,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8E484ECB704C87CDF88C4360 /* [CP] Copy Pods Resources */ = {
@@ -294,9 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EC5474B1EA9C52C00EC9F75 /* LoginViewController.swift in Sources */,
 				5EC63C1D1E970BEB005D91F0 /* CameraViewController.swift in Sources */,
 				5E7F61A91E96811800226177 /* MainNavigationViewController.swift in Sources */,
 				5E7F61BA1E96DF4300226177 /* Parse.swift in Sources */,
+				5EC547491EA9BD9E00EC9F75 /* ExperimentViewController.swift in Sources */,
 				5EC63C1F1E97114A005D91F0 /* AddImageDetailViewController.swift in Sources */,
 				5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */,
 				5E7F61B71E96D0BD00226177 /* Review.swift in Sources */,

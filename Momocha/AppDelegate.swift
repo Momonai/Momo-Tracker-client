@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Here we will go through all the things that our app will need to do after launching
         // To reference our window
+        
+        let loggedIn = false
+        
+        let configuration = ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
+            configuration.applicationId = "momochaID"
+            configuration.clientKey = "381389"  // set to nil assuming you have not set clientKey
+            configuration.server = "https://momocha.herokuapp.com/parse"
+        })
+        
+        // Parse.initializeWithConfiguration(configuration)
+        
+        // Parse.initialize()
+        
+        // Parse.init(with: configuration)
+        
+        // Parse.initializeWithConfiguration(configuration)
+        
+        // For starting the UI screen
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // storyboard = Blueprint for how to build your app, so reference it; Main is the default that was built
@@ -42,7 +61,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         restaurantsTabBarController.viewControllers = [cameraNavigationController, diplayNavigationController]
         
         // start the window with a root view
-        window?.rootViewController = restaurantsTabBarController
+        
+        if loggedIn {
+            window?.rootViewController = restaurantsTabBarController
+        } else {
+            // let experimentalNavigationViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+
+            let experimentalNavigationViewController = storyboard.instantiateViewController(withIdentifier: "ExpNavigationController") as! UINavigationController
+            //storyboard.instantiateViewController(withIdentifier: "CameraNavigationController") as! UINavigationController
+            
+            let nextTabBarController = UITabBarController()
+            
+            nextTabBarController.viewControllers = [experimentalNavigationViewController]
+            window?.rootViewController = nextTabBarController
+        }
+        
         window?.makeKeyAndVisible()
         
         return true

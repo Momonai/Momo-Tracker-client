@@ -208,7 +208,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         print("selected the image")
         
         // Get the image captured by the UIImagePickerController
-        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        _ = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         pickedImage = editedImage

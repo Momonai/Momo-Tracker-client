@@ -42,7 +42,6 @@ class AddImageDetailViewController: UIViewController {
     @IBAction func onUpload(_ sender: Any) {
         print("works")
         print ("We need everything")
-        print ("Rating is now: \(starRatingView.rating)")
         
         rating = starRatingView.rating
         address = restarurantAddressTextFieldView.text

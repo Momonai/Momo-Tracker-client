@@ -36,7 +36,7 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
         
         
         // make a call to parse to get the data
-        let restrnts : NSDictionary = [
+        let _ : NSDictionary = [
             "name" : "Mamako momo pasal",
             "screenname" : "Mamako momo pasal",
             "likecount" : 42,

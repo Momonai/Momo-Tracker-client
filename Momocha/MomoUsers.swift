@@ -17,7 +17,7 @@ class MomoUsers: NSObject {
         name = dictionary["name"] as? String
         screenname = dictionary["screenname"] as? String
         
-        reviews = dictionary["reviews"] as! Array
+        reviews = dictionary["reviews"] as? Array
     }
 
 }

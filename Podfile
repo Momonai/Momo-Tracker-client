@@ -6,7 +6,9 @@ target 'Momocha' do
   use_frameworks!
 
   # Pods for Momocha
-  pod "SwiftyCam"
+  pod 'Parse', '1.14.4'
+  pod 'BDBOAuth1Manager', '2.0.0'
   pod "Cosmos"
+  pod 'SwiftyCam'
 
 end

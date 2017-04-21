@@ -1,15 +1,33 @@
 PODS:
-  - Cosmos (8.0.2)
-  - SwiftyCam (2.1.0)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - BDBOAuth1Manager (2.0.0):
+    - AFNetworking/NSURLSession (~> 3.0.0)
+  - Bolts/Tasks (1.8.4)
+  - Cosmos (9.0.0)
+  - Parse (1.14.4):
+    - Bolts/Tasks (~> 1.8)
+  - SwiftyCam (2.2.1)
 
 DEPENDENCIES:
+  - BDBOAuth1Manager (= 2.0.0)
   - Cosmos
+  - Parse (= 1.14.4)
   - SwiftyCam
 
 SPEC CHECKSUMS:
-  Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
-  SwiftyCam: 2f13473f67afa4658bff79453d7db6890e2fa84d
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  BDBOAuth1Manager: 92d17d06f8a648602962304cd2f35ae7394fa001
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Cosmos: 33eee62b2a0418452aef470f711f83c3ea061b7b
+  Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
+  SwiftyCam: 966b67eeab2dfcfd0077eaa3c5a6bd69e1748af0
 
-PODFILE CHECKSUM: 35d0e9fe9a4b55141784fe8e3cea760e13726e41
+PODFILE CHECKSUM: 51ba826c92e9a8bca28fd147881d928a0c8dfa28
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
