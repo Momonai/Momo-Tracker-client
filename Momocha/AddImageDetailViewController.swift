@@ -45,10 +45,10 @@ class AddImageDetailViewController: UIViewController {
         
         rating = starRatingView.rating
         address = restarurantAddressTextFieldView.text
-        location = Parse.getCoordinatesOf(address: address)
+        location = ParseApiClient.getCoordinatesOf(address: address)
         restaurantName = restaurantNameTextFieldView.text
-        restaurantmentioned = Parse.getRestaurantMentioned(restaurantName: restaurantName)
-        currentUserID = Parse.getPostingUserID()
+        restaurantmentioned = ParseApiClient.getRestaurantMentioned(restaurantName: restaurantName)
+        currentUserID = ParseApiClient.getPostingUserID()
         
         let reviewDict : NSDictionary = [
             "postinguser": currentUserID,
@@ -59,7 +59,7 @@ class AddImageDetailViewController: UIViewController {
         ]
         
         let currentReview = Review(dictionary: reviewDict)
-        Parse.uploadToParse(review: currentReview)
+        ParseApiClient.uploadToParse(review: currentReview)
         
         // go to another tab
         // restaurantsTabBarController.

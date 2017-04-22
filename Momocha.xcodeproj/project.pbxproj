@@ -21,7 +21,7 @@
 		5E7F61B31E96A76B00226177 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E7F61B21E96A76B00226177 /* MapKit.framework */; };
 		5E7F61B51E96C8D700226177 /* MomoUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B41E96C8D700226177 /* MomoUsers.swift */; };
 		5E7F61B71E96D0BD00226177 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B61E96D0BD00226177 /* Review.swift */; };
-		5E7F61BA1E96DF4300226177 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B91E96DF4300226177 /* Parse.swift */; };
+		5E7F61BA1E96DF4300226177 /* ParseApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F61B91E96DF4300226177 /* ParseApiClient.swift */; };
 		5EC547491EA9BD9E00EC9F75 /* ExperimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC547481EA9BD9E00EC9F75 /* ExperimentViewController.swift */; };
 		5EC5474B1EA9C52C00EC9F75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5474A1EA9C52C00EC9F75 /* LoginViewController.swift */; };
 		5EC63C1D1E970BEB005D91F0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC63C1C1E970BEB005D91F0 /* CameraViewController.swift */; };
@@ -47,7 +47,7 @@
 		5E7F61B21E96A76B00226177 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5E7F61B41E96C8D700226177 /* MomoUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomoUsers.swift; sourceTree = "<group>"; };
 		5E7F61B61E96D0BD00226177 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		5E7F61B91E96DF4300226177 /* Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
+		5E7F61B91E96DF4300226177 /* ParseApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseApiClient.swift; sourceTree = "<group>"; };
 		5EC547481EA9BD9E00EC9F75 /* ExperimentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentViewController.swift; sourceTree = "<group>"; };
 		5EC5474A1EA9C52C00EC9F75 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5EC63C1C1E970BEB005D91F0 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		5E7F61B81E96DF0400226177 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				5E7F61B91E96DF4300226177 /* Parse.swift */,
+				5E7F61B91E96DF4300226177 /* ParseApiClient.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 				5EC5474B1EA9C52C00EC9F75 /* LoginViewController.swift in Sources */,
 				5EC63C1D1E970BEB005D91F0 /* CameraViewController.swift in Sources */,
 				5E7F61A91E96811800226177 /* MainNavigationViewController.swift in Sources */,
-				5E7F61BA1E96DF4300226177 /* Parse.swift in Sources */,
+				5E7F61BA1E96DF4300226177 /* ParseApiClient.swift in Sources */,
 				5EC547491EA9BD9E00EC9F75 /* ExperimentViewController.swift in Sources */,
 				5EC63C1F1E97114A005D91F0 /* AddImageDetailViewController.swift in Sources */,
 				5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */,

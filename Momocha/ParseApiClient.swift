@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class Parse: NSObject {
+class ParseApiClient: NSObject {
     
     // TODO: IMPLEMENT THIS
     class func getUsernameFromID(id: Int) -> String {

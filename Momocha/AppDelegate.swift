@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Here we will go through all the things that our app will need to do after launching
         // To reference our window
         
-        let loggedIn = false
+        let loggedIn = true
         
         let configuration = ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
             configuration.applicationId = "momochaID"
@@ -28,13 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "https://momocha.herokuapp.com/parse"
         })
         
-        // Parse.initializeWithConfiguration(configuration)
-        
-        // Parse.initialize()
-        
-        // Parse.init(with: configuration)
-        
-        // Parse.initializeWithConfiguration(configuration)
+        Parse.initialize(with: configuration)
         
         // For starting the UI screen
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -65,10 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if loggedIn {
             window?.rootViewController = restaurantsTabBarController
         } else {
-            // let experimentalNavigationViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            let experimentalNavigationViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
 
-            let experimentalNavigationViewController = storyboard.instantiateViewController(withIdentifier: "ExpNavigationController") as! UINavigationController
-            //storyboard.instantiateViewController(withIdentifier: "CameraNavigationController") as! UINavigationController
+            //let experimentalNavigationViewController = storyboard.instantiateViewController(withIdentifier: "ExpNavigationController") as! UINavigationController
             
             let nextTabBarController = UITabBarController()
             
