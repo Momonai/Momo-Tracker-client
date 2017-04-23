@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import Cosmos
+import MBProgressHUD
+import Parse
 
 class AddImageDetailViewController: UIViewController {
 
@@ -20,7 +22,7 @@ class AddImageDetailViewController: UIViewController {
     var location: CLLocationCoordinate2D!
     var editedImage: UIImage!
     var restaurantName: String!
-    var currentUserID: Int!
+    var currentUserID: PFUser!
     
     @IBOutlet weak var starRatingView: CosmosView!
     
@@ -50,16 +52,31 @@ class AddImageDetailViewController: UIViewController {
         restaurantmentioned = ParseApiClient.getRestaurantMentioned(restaurantName: restaurantName)
         currentUserID = ParseApiClient.getPostingUserID()
         
+        print (">>>>>>>>>>>>>>>>>>>>\(editedImage)")
+        print (">>>>>>>>>>>>>>>we are sending this>>>>>\(reviewImageView.image)")
+
         let reviewDict : NSDictionary = [
             "postinguser": currentUserID,
             "restaurantmentioned": restaurantmentioned,
             "location": location,
             "textreview": textreview,
-            "rating": rating
+            "rating": rating,
+            "restaurantName": restaurantName,
+            "media" : editedImage as UIImage
         ]
-        
+        print (">>>>>>>>>>>>>>>>>>>>\(reviewImageView.image)")
+
         let currentReview = Review(dictionary: reviewDict)
-        ParseApiClient.uploadToParse(review: currentReview)
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        ParseApiClient.uploadToParse(review: currentReview,
+                           withCompletion: { _ in
+                            //s MBProgressHUD.showAdded(to: self.view, animated: true)
+                            DispatchQueue.main.async {
+                                MBProgressHUD.hide(for: self.view, animated: true)
+                            }}
+        )
         
         // go to another tab
         // restaurantsTabBarController.

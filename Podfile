@@ -10,5 +10,7 @@ target 'Momocha' do
   pod 'BDBOAuth1Manager', '2.0.0'
   pod "Cosmos"
   pod 'SwiftyCam'
+  pod 'MBProgressHUD'
+  pod 'ParseUI'
 
 end

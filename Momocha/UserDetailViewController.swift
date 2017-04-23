@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import Parse
 
 class UserDetailViewController: UIViewController {
 
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBAction func onLogoutButtonPressed(_ sender: Any) {
+        print("logoutPresed")
+        PFUser.logOut()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UserDidLogOut"), object: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        userNameLabel.text = PFUser.current()?.username
         // Do any additional setup after loading the view.
     }
 
