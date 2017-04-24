@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var loggedIn = false
         
+        Parse.enableLocalDatastore()
+        
         let configuration = ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
             configuration.applicationId = "momochaID"
             configuration.clientKey = "381389"  // set to nil assuming you have not set clientKey
@@ -52,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let restaurantsTabBarController = UITabBarController()
         
         // list all the viewControllers
-        restaurantsTabBarController.viewControllers = [cameraNavigationController, diplayNavigationController]
+        restaurantsTabBarController.viewControllers = [diplayNavigationController, cameraNavigationController]
         
         // start the window with a root view
         if PFUser.current() != nil{

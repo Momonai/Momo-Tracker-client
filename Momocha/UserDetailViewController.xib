@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDetailViewController" customModule="Momocha" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="HEC-86-fcn" id="XbB-d7-Ii2"/>
                 <outlet property="userNameLabel" destination="OQe-3V-Ijx" id="W9U-hl-9ky"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
