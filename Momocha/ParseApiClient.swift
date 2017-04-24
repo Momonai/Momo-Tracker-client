@@ -8,17 +8,24 @@
 
 import UIKit
 import MapKit
+import Parse
 
 class ParseApiClient: NSObject {
+    var posts : [PFObject]!
+
     
-    // TODO: IMPLEMENT THIS
-    class func getUsernameFromID(id: Int) -> String {
-        return "Aadarsha Shaha"
+    class func getPostingUserScreenNameFromReview(foodReview: Review) -> String {
+        return foodReview.postinguser!.username!
     }
     
+    class func getFoodTextReview(foodReview: Review) -> String {
+        return foodReview.textreview!
+    }
+    
+    
     // TODO: IMPLEMENT THIS
-    class func getRestaurantNameFromID(id: Int) -> String{
-        return "Suman daju ko kuyiya momo pasal"
+    class func getRestaurantNameFromReview(foodReview: Review) -> String{
+        return foodReview.restaurantName!
     }
 
     // TODO: IMPLEMENT THIS
@@ -34,18 +41,50 @@ class ParseApiClient: NSObject {
         return 2
     }
     
-    // TODO: IMPLEMENT THIS
-    class func getPostingUserID() -> Int {
+    class func getPostingUserID() -> PFUser {
         // search in database what is the current users ID
-        return 1
+        return PFUser.current()! // Pointer column type that points to PFUser
     }
     
-    // TODO: IMPLEMENT THIS
-    class func uploadToParse(review: Review) {
-        // upload the dicctionary review to parse.. the definition of Review is in the models directory
-        print("This is the review of the restaurant\(String(describing: review.textreview))")
-        print("This is the rating of the restaurant\(String(describing: review.rating))")
-        print("This is the location of the restaurant\(String(describing: review.location))")
+    class func uploadToParse(review: Review, withCompletion completion: PFBooleanResultBlock?) {
+        // Create Parse object PFObject
+        let post = PFObject(className: "ReviewPost")
+        
+        //Add relevant fields to the object
+        post["review"] = review.textreview
+        post["rating"] = review.rating
+        post["latitude"] = review.location?.latitude
+        post["longitude"] = review.location?.longitude
+        post["author"] = review.postinguser
+        post["restaurant_name"] = review.restaurantName
+        post["restaurant_id"] = review.restaurantmentioned
+        
+        print (">>>>>>>>>>>>>>>>>>>>\(review.media)")
+
+        
+//        
+//        let imageData = UIImagePNGRepresentation(review.media!)
+//        let imageFile = PFFile(name: "image.png", data: imageData!)
+//        
+//        post["imageName"] = "Food Image"
+//        post["imageFile"] = imageFile
+        
+        
+        post["media"] = getPFFileFromImage(image: review.media) // PFFile column type
+       
+        post.saveInBackground(block: completion)
     }
+    
+    class func getPFFileFromImage(image: UIImage?) -> PFFile? {
+        // check if image is not nil
+        if let image = image {
+            // get image data and check if that is not nil
+            if let imageData = UIImagePNGRepresentation(image) {
+                return PFFile(name: "image.png", data: imageData)
+            }
+        }
+        return nil
+    }
+
 
 }

@@ -31,7 +31,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if hasImage {
+        if hasImage == true {
             print ("Photo clicked and now being displayed")
             // display image
             clickedImageView = UIImageView(image: pickedImage)
@@ -53,7 +53,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             
         } else {
             print("camera screen accessed \n")
-            if userCanceledClickingImage {
+            if userCanceledClickingImage == true{
                 userCanceledClickingImage = false
                 // segue to other tab
                 // performSegue(withIdentifier: "addDetailSegue", sender: self)

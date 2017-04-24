@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +25,65 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onSignupButtonPressed(_ sender: Any) {
+        let newUser = PFUser()
+        newUser.username = usernameField.text
+        newUser.password = passwordField.text
+        
+        newUser.signUpInBackground {
+            (succeeded: Bool, error:Error?) -> Void in
+            if succeeded {
+                print("Created a user")
+                /*
+                 let alertController = UIAlertController(title: "WELCOME", message: "Welcome to Chat", preferredStyle: .alert)
+                 
+                 
+                 let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                 
+                 }
+                 alertController.addAction(cancelAction)
+                 
+                 
+                 self.present(alertController, animated: true) {
+                 // optional code for what happens after the alert controller has finished presenting
+                 }
+                 */
+                //self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
+            else{
+                print("Error is : ",error?.localizedDescription)
+            }
+        }
+    }
 
+    @IBAction func onLoginButtonPressed(_ sender: Any) {
+        PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!){
+            user, error in
+            if user != nil{
+                print("User logined")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
+            else{
+                /*
+                 let alertController = UIAlertController(title: "ERROR", message: "INVALID VALUES", preferredStyle: .alert)
+                 
+                 
+                 let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                 // handle cancel response here. Doing nothing will dismiss the view.
+                 }
+                 // add the cancel action to the alertController
+                 alertController.addAction(cancelAction)
+                 
+                 
+                 
+                 self.present(alertController, animated: true) {
+                 // optional code for what happens after the alert controller has finished presenting
+                 }
+                 */
+                
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

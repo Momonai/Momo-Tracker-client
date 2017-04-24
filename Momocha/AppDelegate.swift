@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Here we will go through all the things that our app will need to do after launching
         // To reference our window
         
-        let loggedIn = true
+        var loggedIn = false
+        
+        Parse.enableLocalDatastore()
         
         let configuration = ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
             configuration.applicationId = "momochaID"
@@ -52,9 +54,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let restaurantsTabBarController = UITabBarController()
         
         // list all the viewControllers
-        restaurantsTabBarController.viewControllers = [cameraNavigationController, diplayNavigationController]
+        restaurantsTabBarController.viewControllers = [diplayNavigationController, cameraNavigationController]
         
         // start the window with a root view
+        if PFUser.current() != nil{
+            print("There is a current user")
+//            let storyBoard = UIStoryboard(name : "Main", bundle: nil)
+//            let viewController = storyBoard.instantiateViewController(withIdentifier: "HomeNavigationController")
+//            window?.rootViewController = viewController //root view controller
+            loggedIn = true
+            
+        }
+        else{
+            print("No Current user")
+        }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "UserDidLogOut" ), object: nil, queue: OperationQueue.main) {(NSNotification)->Void in //the logout button information is received here
+            
+            print("Inside the change app delegate")
+            let experimentalNavigationViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            
+            //let experimentalNavigationViewController = storyboard.instantiateViewController(withIdentifier: "ExpNavigationController") as! UINavigationController
+            
+            let nextTabBarController = UITabBarController()
+            
+            nextTabBarController.viewControllers = [experimentalNavigationViewController]
+            self.window?.rootViewController = nextTabBarController
+            
+        }
+
         
         if loggedIn {
             window?.rootViewController = restaurantsTabBarController

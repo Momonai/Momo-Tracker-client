@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B977201EAD84660064352C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9771F1EAD84660064352C /* Reachability.swift */; };
 		2DA279650118743820FE14E7 /* Pods_Momocha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCCE102A38B81AEF3DCCF6B /* Pods_Momocha.framework */; };
 		5E7F619E1E96801500226177 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F619C1E96801500226177 /* UserDetailViewController.swift */; };
 		5E7F619F1E96801500226177 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7F619D1E96801500226177 /* UserDetailViewController.xib */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27B9771F1EAD84660064352C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		5CCB59AE9ABE46CA2D4D23D2 /* Pods-Momocha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momocha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Momocha/Pods-Momocha.release.xcconfig"; sourceTree = "<group>"; };
 		5E7F619C1E96801500226177 /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		5E7F619D1E96801500226177 /* UserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		5ED399C51E67B68A005BE061 /* Momocha */ = {
 			isa = PBXGroup;
 			children = (
+				27B9771F1EAD84660064352C /* Reachability.swift */,
 				5E7F61B81E96DF0400226177 /* API */,
 				5E2095F91E9661A600789273 /* models */,
 				5E2095F81E9661A200789273 /* views */,
@@ -275,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8E484ECB704C87CDF88C4360 /* [CP] Copy Pods Resources */ = {
@@ -308,6 +311,7 @@
 				5EC63C1F1E97114A005D91F0 /* AddImageDetailViewController.swift in Sources */,
 				5ED399C71E67B68A005BE061 /* AppDelegate.swift in Sources */,
 				5E7F61B71E96D0BD00226177 /* Review.swift in Sources */,
+				27B977201EAD84660064352C /* Reachability.swift in Sources */,
 				5E7F61A61E9680FD00226177 /* RestaurantListViewController.swift in Sources */,
 				5E7F61B11E96A58800226177 /* Restaurant.swift in Sources */,
 				5E7F61B51E96C8D700226177 /* MomoUsers.swift in Sources */,

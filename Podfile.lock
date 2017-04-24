@@ -10,14 +10,20 @@ PODS:
     - AFNetworking/NSURLSession (~> 3.0.0)
   - Bolts/Tasks (1.8.4)
   - Cosmos (9.0.0)
+  - MBProgressHUD (1.0.0)
   - Parse (1.14.4):
     - Bolts/Tasks (~> 1.8)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
   - SwiftyCam (2.2.1)
 
 DEPENDENCIES:
   - BDBOAuth1Manager (= 2.0.0)
   - Cosmos
+  - MBProgressHUD
   - Parse (= 1.14.4)
+  - ParseUI
   - SwiftyCam
 
 SPEC CHECKSUMS:
@@ -25,9 +31,11 @@ SPEC CHECKSUMS:
   BDBOAuth1Manager: 92d17d06f8a648602962304cd2f35ae7394fa001
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Cosmos: 33eee62b2a0418452aef470f711f83c3ea061b7b
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
+  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   SwiftyCam: 966b67eeab2dfcfd0077eaa3c5a6bd69e1748af0
 
-PODFILE CHECKSUM: 51ba826c92e9a8bca28fd147881d928a0c8dfa28
+PODFILE CHECKSUM: f887eb16c93d33bcb655c671ca72f79bacab1279
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0

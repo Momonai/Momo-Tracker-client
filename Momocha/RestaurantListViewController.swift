@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import Parse
+import ParseUI
 
 struct cellData {
     let cell: Int!
@@ -17,13 +19,15 @@ struct cellData {
 
 class RestaurantListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var posts : [PFObject]!
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var restaurants: [NSDictionary]!
+    var reviews: [Review]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,34 +37,46 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
         
         // defer computing the height of each row until the user scrolls the table
         tableView.estimatedRowHeight = 120
+    
+        var returnFromParse = [Review]()
         
+        // Fetch all posts from Parse
+        // construct PFQuery
+        let query = PFQuery(className: "ReviewPost")
+        query.order(byDescending: "createdAt")
+        query.includeKey("author")
+        query.limit = 20
         
-        // make a call to parse to get the data
-        let _ : NSDictionary = [
-            "name" : "Mamako momo pasal",
-            "screenname" : "Mamako momo pasal",
-            "likecount" : 42,
-            "dislikeCount" : 12,
-            "reviewers": [1, 2],
-            "reviews": [2, 4],
-            "coordinate": CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667)
-        ]
-        
-        // make a call to parse to get all recent posts
-        let a: NSDictionary = [
-            "postinguser" : 2,
-            "restaurantmentioned" : 3,
-            "location" : CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667),
-            "textreview" : "Manai chuney mitho",
-            "rating" : 2,
-        ]
-        
-        
-        let returnFromParse = [a,a, a, a]
-        
-        restaurants = returnFromParse
-        tableView.reloadData()
-        
+        // fetch data asynchronously
+        query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) -> Void in
+            if let posts = posts {
+                self.posts = posts
+                print("<<<<<<<<>>>>>>>>>Post is : ", posts)
+                for post in posts {
+                    let receivedPost : NSDictionary = [
+                        "postinguser" : post["author"],
+                        "restaurantmentioned" : post["restaurant_id"],
+                        "location" : CLLocationCoordinate2D(latitude: post["latitude"] as! CLLocationDegrees, longitude: post["longitude"] as! CLLocationDegrees),
+                        "textreview" : post["review"],
+                        "rating" : post["rating"],
+                        "restaurantName" : post["restaurant_name"]
+                    ]
+                    
+                    let receivedReview = Review(dictionary: receivedPost)
+                    returnFromParse.append(receivedReview)
+                }
+                
+                
+                self.reviews = returnFromParse
+                //print("Post is : \(self.reviews[0].restaurantName!)")
+                self.tableView.reloadData()
+                // do something with the data fetched
+            } else {
+                print("Error! : ", error?.localizedDescription)
+                // handle error
+            }
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,10 +85,10 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let restaurants = self.restaurants {
-            return restaurants.count
+        if let reviews = self.reviews {
+            return reviews.count
         }
-        return 2
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,15 +97,20 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
         
         let restaurantcell = Bundle.main.loadNibNamed("RestaurantTableViewCell", owner: self, options: nil)?.first as! RestaurantTableViewCell
         
-        // use the modal
-        // let currentPost = Review(dictionary: restaurants[indexPath])
         
-        let currentPost = Review(dictionary: restaurants[0])
+        print(">>>>>>>", self.reviews[indexPath.row].postinguser!.username!)
+        print(">>>>>>>", self.reviews[indexPath.row].media)
+        restaurantcell.review = self.reviews[indexPath.row]
         
-        print(">>>>>>>>>>>> indexpath.row: \(currentPost.textreview!)")
+        let post = posts[indexPath.row]
+        print("this post\(post)")
+
         
-        //restaurantcell.descriptionLabel.text = currentPost.textreview
-        restaurantcell.review = currentPost
+        let photoPFFile = post["media"] as? PFFile
+
+        restaurantcell.postImageView.file = photoPFFile
+
+        restaurantcell.postImageView.loadInBackground()
 
         
         return restaurantcell
