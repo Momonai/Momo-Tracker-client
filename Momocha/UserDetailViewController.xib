@@ -65,8 +65,12 @@
                         <action selector="onLogoutButtonPressed:" destination="-1" eventType="touchUpInside" id="h8V-Ph-oua"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="N5v-A9-LPN">
+                    <rect key="frame" x="242" y="99" width="122" height="121"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.60654017916322989" green="1" blue="0.77375874440973269" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="0.57700453979098076" blue="0.26399198095936505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="HEC-86-fcn" secondAttribute="bottom" id="6aH-EG-dVq"/>
                 <constraint firstItem="HEC-86-fcn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="228" id="8JS-vV-gOm"/>
@@ -83,4 +87,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableView>
     </objects>
+    <resources>
+        <image name="food" width="300" height="300"/>
+    </resources>
 </document>

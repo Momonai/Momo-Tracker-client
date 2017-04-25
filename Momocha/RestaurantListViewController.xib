@@ -17,35 +17,32 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fYb-Nv-kAw">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="375" id="rGZ-aF-d18"/>
-                    </constraints>
                 </tableView>
                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantCell" rowHeight="133" translatesAutoresizingMaskIntoConstraints="NO" id="P0c-Z6-b6N">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="45"/>
                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P0c-Z6-b6N" id="mdb-Zn-5H0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableViewCellContentView>
                     <constraints>
                         <constraint firstAttribute="height" constant="133" id="51C-GS-SB2"/>
-                        <constraint firstAttribute="width" constant="375" id="cyH-3G-Mho"/>
                     </constraints>
                 </tableViewCell>
             </subviews>
             <constraints>
-                <constraint firstItem="P0c-Z6-b6N" firstAttribute="trailing" secondItem="fYb-Nv-kAw" secondAttribute="trailing" id="2LQ-D6-JgS"/>
-                <constraint firstItem="P0c-Z6-b6N" firstAttribute="leading" secondItem="fYb-Nv-kAw" secondAttribute="leading" id="Cgy-0q-S2a"/>
+                <constraint firstAttribute="trailing" secondItem="fYb-Nv-kAw" secondAttribute="trailing" id="0cg-6Q-F6Q"/>
+                <constraint firstItem="fYb-Nv-kAw" firstAttribute="leading" secondItem="P0c-Z6-b6N" secondAttribute="trailing" id="0hk-I9-rAo"/>
                 <constraint firstItem="P0c-Z6-b6N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lnz-bk-Rf1"/>
-                <constraint firstAttribute="bottom" secondItem="fYb-Nv-kAw" secondAttribute="bottom" id="PAx-Nt-5Kk"/>
                 <constraint firstItem="P0c-Z6-b6N" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Po7-0j-RrA"/>
-                <constraint firstItem="fYb-Nv-kAw" firstAttribute="top" secondItem="P0c-Z6-b6N" secondAttribute="top" id="bu1-kv-sRW"/>
+                <constraint firstAttribute="bottom" secondItem="fYb-Nv-kAw" secondAttribute="bottom" id="XnE-HL-qB6"/>
+                <constraint firstItem="fYb-Nv-kAw" firstAttribute="leading" secondItem="P0c-Z6-b6N" secondAttribute="leading" id="jcV-yR-SEQ"/>
+                <constraint firstItem="fYb-Nv-kAw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zFW-hT-GgK"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>

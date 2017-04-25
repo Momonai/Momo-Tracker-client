@@ -27,7 +27,7 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.reloadData()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,7 +37,9 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
         
         // defer computing the height of each row until the user scrolls the table
         tableView.estimatedRowHeight = 120
-    
+        
+        
+        
         var returnFromParse = [Review]()
         
         // Fetch all posts from Parse
@@ -77,6 +79,8 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
             }
             self.tableView.reloadData()
         }
+
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,7 +101,6 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
         
         let restaurantcell = Bundle.main.loadNibNamed("RestaurantTableViewCell", owner: self, options: nil)?.first as! RestaurantTableViewCell
         
-        
         print(">>>>>>>", self.reviews[indexPath.row].postinguser!.username!)
         print(">>>>>>>", self.reviews[indexPath.row].media)
         restaurantcell.review = self.reviews[indexPath.row]
@@ -116,14 +119,46 @@ class RestaurantListViewController: UIViewController, UITableViewDataSource, UIT
         return restaurantcell
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//    override func viewDidAppear(_ animated: Bool) {
+//        var returnFromParse = [Review]()
+//        
+//        // Fetch all posts from Parse
+//        // construct PFQuery
+//        let query = PFQuery(className: "ReviewPost")
+//        query.order(byDescending: "createdAt")
+//        query.includeKey("author")
+//        query.limit = 20
+//        
+//        // fetch data asynchronously
+//        query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) -> Void in
+//            if let posts = posts {
+//                self.posts = posts
+//                print("<<<<<<<<>>>>>>>>>Post is : ", posts)
+//                for post in posts {
+//                    let receivedPost : NSDictionary = [
+//                        "postinguser" : post["author"],
+//                        "restaurantmentioned" : post["restaurant_id"],
+//                        "location" : CLLocationCoordinate2D(latitude: post["latitude"] as! CLLocationDegrees, longitude: post["longitude"] as! CLLocationDegrees),
+//                        "textreview" : post["review"],
+//                        "rating" : post["rating"],
+//                        "restaurantName" : post["restaurant_name"]
+//                    ]
+//                    
+//                    let receivedReview = Review(dictionary: receivedPost)
+//                    returnFromParse.append(receivedReview)
+//                }
+//                
+//                
+//                self.reviews = returnFromParse
+//                //print("Post is : \(self.reviews[0].restaurantName!)")
+//                self.tableView.reloadData()
+//                // do something with the data fetched
+//            } else {
+//                print("Error! : ", error?.localizedDescription)
+//                // handle error
+//            }
+//            self.tableView.reloadData()
+//        }
+//
+//    }
 }

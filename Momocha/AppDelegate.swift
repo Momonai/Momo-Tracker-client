@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        //parse-dashboard --appId momochaID --masterKey 381389 --serverURL "https://momocha.herokuapp.com/parse"
+        //http://localhost:4040/apps
         // Override point for customization after application launch.
         // Here we will go through all the things that our app will need to do after launching
         // To reference our window
@@ -54,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let restaurantsTabBarController = UITabBarController()
         
         // list all the viewControllers
-        restaurantsTabBarController.viewControllers = [diplayNavigationController, cameraNavigationController]
+        restaurantsTabBarController.viewControllers = [cameraNavigationController, diplayNavigationController]
         
         // start the window with a root view
         if PFUser.current() != nil{
