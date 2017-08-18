@@ -4,6 +4,18 @@ Momo Tracker Client is a basic iOS  app to review and track local momo, a nepali
 
 Time spent: **X** hours spent in total so far
 
+## To Run
+```
+# install CocoaPods gem (only need to do once in a device, optional)
+sudo gem install -n /usr/local/bin cocoapods
+
+# Clones the CocoaPods specs repo to ~/.cocoapods (only need to do once in a device, optional)
+pod setup
+
+# install all the pods
+pod install
+```
+
 ## User Stories
 
 The following **required** functionality is completed:
